@@ -1,5 +1,4 @@
 <?php
-
 function secure_create_salt() {
     $i_salt_bytes = file_get_config('password_salt_bytes');
     
