@@ -11,3 +11,5 @@ if(file_exists('offline.php')) {
 foreach(glob(DIRECTORY . '/*.php') as $file) {
     require_once $file;
 }
+
+ob_start();

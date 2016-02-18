@@ -2,12 +2,29 @@
 define('PHP_CONFIG_FILE', 'config.ini');
 define('PHP_STRING_FILE', 'lang/string_en-us.txt');
 
+# Get all config settings
+function file_get_config_all() {
+    if(!$settings = parse_ini_file(PHP_CONFIG_FILE, true)) {
+		throw new exception('Unable to open ' . PHP_CONFIG_FILE . '.');
+	}
+	return $settings;
+}
+
 # Get config setting from file
 function file_get_config($s_config_name) {
     if(!$settings = parse_ini_file(PHP_CONFIG_FILE)) {
         throw new exception('Unable to open ' . PHP_CONFIG_FILE . '.');
     }
     return $settings[$s_config_name];
+}
+
+# Get password pepper from file
+function file_read_pepper() {
+    $fh_pepper_file = fopen(file_get_config('password_pepper_file'), 'r');
+    $s_pepper = fread($fh_pepper_file, file_get_config('password_pepper_length'));
+    fclose($fh_pepper_file);
+    
+    return $s_pepper;
 }
 
 # Get language string

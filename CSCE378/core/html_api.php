@@ -1,5 +1,4 @@
 <?php
-
 function html_top() {
     html_doctype();
     html_meta();
