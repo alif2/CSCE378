@@ -24,6 +24,5 @@ function database_add_user($s_email, $s_salt, $s_hash) {
     $s_stmt->bindParam(':s_password_salt', $s_salt);
     $s_stmt->bindParam(':s_password_hash', $s_hash);
     
-    $result = $s_stmt->execute();
-    return $result;
+    return $s_stmt->execute();
 }
