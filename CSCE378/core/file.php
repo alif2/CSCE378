@@ -20,7 +20,7 @@ function file_get_config($s_config_name) {
 
 # Get password pepper from file
 function file_read_pepper() {
-    $fh_pepper_file = fopen($_SERVER['DOCUMENT_ROOT'] . '\\' . file_get_config('password_pepper_file'), 'r');
+    $fh_pepper_file = fopen($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . file_get_config('password_pepper_file'), 'r');
     $s_pepper = fread($fh_pepper_file, file_get_config('password_pepper_length'));
     fclose($fh_pepper_file);
     
