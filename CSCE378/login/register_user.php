@@ -5,8 +5,10 @@ $s_password = $_POST['password'];
 $s_salt = secure_create_salt();
 $s_pepper = file_read_pepper();
 $s_hash = secure_create_hash($s_password, $s_salt, $s_pepper);
-$check = database_add_user($s_email, $s_salt, $s_hash);
-if($check >0){
-	echo 'User input successfully';
+$i_rows_added = database_add_user($s_email, $s_salt, $s_hash);
+
+if($i_rows_added >0){
+    echo 'User input successfully';
+} else {
+    echo 'User could not be added';
 }
-echo 'Yufan has done everything with this file';
