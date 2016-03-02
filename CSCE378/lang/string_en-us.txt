@@ -1,1 +1,1 @@
-$s_title = 'Happy birthday!'
+$s_title = 'CSCE 378 Time Tracker'
