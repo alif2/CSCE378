@@ -26,3 +26,13 @@ function database_add_user($s_email, $s_salt, $s_hash) {
     
     return $s_stmt->execute();
 }
+
+function database_get_user_clock_status($i_user_id) {
+    $dbh = get_database();
+    
+    $s_stmt = $dbh->prepare('SELECT TimeTrackingEventType FROM TimeTrackingEvents WHERE UserID = :i_user_id ORDER BY TimeTrackingEventId DESC LIMIT 1');
+    $s_stmt->bindParam(':i_user_id', $i_user_id);
+    
+    $s_stmt->execute();
+    return $s_stmt->get_result();
+}
