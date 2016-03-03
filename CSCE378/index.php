@@ -18,7 +18,5 @@ html_top();
       </ul>
     </div>
   </nav>
-
-  <h1>PHP is still working!</h1>
   
 </div>
