@@ -4,7 +4,9 @@ html_top();
 ?>
 <div class="row">
   <div class="col-md-4">
-    <button type="button" class="btn btn-default btnlg">CLOCK IN</button>
+    <form role="form" action="" method="POST">
+      <button type="submit" class="btn btn-default btnlg">CLOCK IN</button>
+    </form>
   </div>
   <div class="col-md-8">
     Current Time:<p id="clock"></p>
