@@ -9,7 +9,7 @@ html_top();
     </form>
   </div>
   <div class="col-md-8">
-    Current Time:<p id="clock"></p>
+    Current Time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="clock"></span>
     <?php
     if(database_get_user_clock_status(1) == 'ClockIn') {
         $s_clock_in_time = database_get_user_last_event_time(1);
@@ -18,6 +18,8 @@ html_top();
         echo 'Working Hours: ' . round($i_work_hours, 2) . '<br>'; 
     }
     ?>
+    <p>Clock-in Time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp12 : 30 PM</p>
+    <p>Working Duration:&nbsp&nbsp&nbsp&nbsp03  Hour(s)  12  Minute(s)</p>
   </div>
 </div>
 <div class="row">
