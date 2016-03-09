@@ -4,7 +4,7 @@ html_top();
 ?>
 
 <div class="container">
-    <form role="form" action="login/register_user.php" method="post">
+    <form role="form" action="app/register_user.php" method="post">
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="text" class="form-control" id="email" name="email">
@@ -20,3 +20,5 @@ html_top();
         </div>
     </form>
 </div>
+<?php
+html_bottom();

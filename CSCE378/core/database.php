@@ -51,7 +51,7 @@ function database_get_user_last_event_time($i_user_id) {
 function database_user_create_time_tracking_event($s_event_type, $i_user_id, $dt_clock_time_utc) {
     $dbh = get_database();
     
-    $s_stmt->prepare('INSERT INTO TimeTrackingEvents(TimeTrackingEventType, UserID, TimeUTC) VALUES (:s_time_tracking_event_type, :i_user_id, :dt_time_utc)');
+    $s_stmt = $dbh->prepare('INSERT INTO TimeTrackingEvents(TimeTrackingEventType, UserID, TimeUTC) VALUES (:s_time_tracking_event_type, :i_user_id, :dt_time_utc)');
     $s_stmt->bindParam(':s_time_tracking_event_type', $s_event_type);
     $s_stmt->bindParam(':i_user_id', $i_user_id);
     $s_stmt->bindParam(':dt_time_utc', $dt_clock_time_utc);

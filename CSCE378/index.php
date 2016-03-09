@@ -2,10 +2,12 @@
 require_once('core.php');
 html_top();
 ?>
+
 <div class="row">
   <div class="col-md-4">
-    <form role="form" action="" method="POST">
-      <button type="submit" class="btn btn-default btnlg">CLOCK IN</button>
+    <form class="clock-form" role="form" method="POST">
+      <button type="submit" class="btn btn-default btnlg" id="clock-in">CLOCK IN</button>
+      <button type="submit" class="btn btn-default btnlg" id="clock-out">CLOCK OUT</button>
     </form>
   </div>
   <div class="col-md-8">
@@ -51,5 +53,16 @@ html_top();
     </table>
   </div>
 </div>
-<?
+<?php
 html_bottom();
+
+$s_user_clock_status = database_get_user_clock_status(1);
+if($s_user_clock_status == 'ClockIn') {
+?>
+<script>$('#clock-in').hide();</script>
+<?php
+} else {
+?>
+<script>$('#clock-out').hide();</script>
+<?php  
+}
