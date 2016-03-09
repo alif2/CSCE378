@@ -11,13 +11,11 @@ html_top();
     </form>
   </div>
   <div class="col-md-8">
-    Current Time:<p id="clock"></p>
+    Current Time: <span id="clock"></span><br>
+    Clock In Time: <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
+    Working Hours: <span id="working-hours"></span>
     <?php
     if(database_get_user_clock_status(1) == 'ClockIn') {
-        $s_clock_in_time = database_get_user_last_event_time(1);
-        $i_work_hours = (strtotime('now') - strtotime($s_clock_in_time)) / 3600.0;
-        echo 'Clock In Time: ' . $s_clock_in_time . '<br>';
-        echo 'Working Hours: ' . round($i_work_hours, 2) . '<br>'; 
     }
     ?>
   </div>
@@ -28,7 +26,6 @@ html_top();
     <table class="table-bordered ptable">
       <thead>
         <tr>
-          <th>Date</th>
           <th>Monday Feb.2</th>
           <th>Tuesday Feb.3</th>
           <th>Wednesday Feb.4</th>
@@ -40,7 +37,6 @@ html_top();
       </thead>
       <tbody>
         <tr>
-          <td>Duration [hour(s)]</td>
           <td>5.2</td>
           <td>4.3</td>
           <td></td>

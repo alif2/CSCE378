@@ -1,5 +1,11 @@
 window.onload = function getTime() {
-    $('#clock').text(new Date());
+    var now = new Date();
+    $('#clock').text(now.toISOString());
+    
+    var clockInTime = new Date($('#clock-in-time').text());
+    
+    var workHours = ((now - clockInTime) / 3600000.0).toFixed(2);
+    $('#working-hours').text(workHours);
     setTimeout(getTime, 500);
 };
 
