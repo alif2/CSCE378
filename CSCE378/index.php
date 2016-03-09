@@ -14,10 +14,6 @@ html_top();
     Current Time: <span id="clock"></span><br>
     Clock In Time: <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
     Working Hours: <span id="working-hours"></span>
-    <?php
-    if(database_get_user_clock_status(1) == 'ClockIn') {
-    }
-    ?>
   </div>
 </div>
 <div class="row">
