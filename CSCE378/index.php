@@ -2,13 +2,16 @@
 require_once('core.php');
 html_top();
 ?>
+
 <div class="row">
   <div class="col-md-4">
-    <form role="form" action="" method="POST">
-      <button type="submit" class="btn btn-default btnlg">CLOCK IN</button>
+    <form class="clock-form" role="form" method="POST">
+      <button type="submit" class="btn btn-default btnlg" id="clock-in">CLOCK IN</button>
+      <button type="submit" class="btn btn-default btnlg" id="clock-out">CLOCK OUT</button>
     </form>
   </div>
   <div class="col-md-8">
+<<<<<<< HEAD
     Current Time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="clock"></span>
     <?php
     if(database_get_user_clock_status(1) == 'ClockIn') {
@@ -20,6 +23,11 @@ html_top();
     ?>
     <p>Clock-in Time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp12 : 30 PM</p>
     <p>Working Duration:&nbsp&nbsp&nbsp&nbsp03  Hour(s)  12  Minute(s)</p>
+=======
+    Current Time: <span id="clock"></span><br>
+    Clock In Time: <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
+    Working Hours: <span id="working-hours"></span>
+>>>>>>> origin/dev
   </div>
 </div>
 <div class="row">
@@ -28,7 +36,6 @@ html_top();
     <table class="table-bordered ptable">
       <thead>
         <tr>
-          <th>Date</th>
           <th>Monday Feb.2</th>
           <th>Tuesday Feb.3</th>
           <th>Wednesday Feb.4</th>
@@ -40,7 +47,6 @@ html_top();
       </thead>
       <tbody>
         <tr>
-          <td>Duration [hour(s)]</td>
           <td>5.2</td>
           <td>4.3</td>
           <td></td>
@@ -53,5 +59,16 @@ html_top();
     </table>
   </div>
 </div>
-<?
+<?php
 html_bottom();
+
+$s_user_clock_status = database_get_user_clock_status(1);
+if($s_user_clock_status == 'ClockIn') {
+?>
+<script>$('#clock-in').hide();</script>
+<?php
+} else {
+?>
+<script>$('#clock-out').hide();</script>
+<?php  
+}
