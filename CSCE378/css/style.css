@@ -3,9 +3,11 @@
 	float: center;
 }
 .ptable {
-	text-align: center;
 	width: 940px;
 	height: 100px;
+}
+.textbox {
+  text-align: center;
 }
 .btnsm {
   font-size: 13px;

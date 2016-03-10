@@ -10,7 +10,6 @@ html_top();
       <button type="submit" class="btn btn-default btnlg" id="clock-out">CLOCK OUT</button>
     </form>
   </div>
-<<<<<<< HEAD
   <div class="col-md-2">
     <div>Current Time:</div>
     <div>Clock-In Time:</div>
@@ -28,13 +27,7 @@ html_top();
     ?>
     <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
     <span id="working-hours"></span>
-=======
-  <div class="col-md-8">
-    Current Time: <span id="clock"></span><br>
-    Clock-In Time: <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
-    Working Duration: <span id="working-hours"></span>
->>>>>>> origin/dev
-  </div>
+    </div>
 </div>
 <div class="row">
   <div class="col-md-12">
@@ -42,24 +35,24 @@ html_top();
     <table class="table-bordered ptable">
       <thead>
         <tr>
-          <th>Monday Feb.2</th>
-          <th>Tuesday Feb.3</th>
-          <th>Wednesday Feb.4</th>
-          <th>Thursday Feb.5</th>
-          <th>Friday Feb.6</th>
-          <th>Saturday Feb.7</th>
-          <th>Sunday Feb.8</th>
+          <th class="textbox">Monday Feb.2</th>
+          <th class="textbox">Tuesday Feb.3</th>
+          <th class="textbox">Wednesday Feb.4</th>
+          <th class="textbox">Thursday Feb.5</th>
+          <th class="textbox">Friday Feb.6</th>
+          <th class="textbox">Saturday Feb.7</th>
+          <th class="textbox">Sunday Feb.8</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>5.2</td>
-          <td>4.3</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td class="textbox">5.2</td>
+          <td class="textbox">4.3</td>
+          <td class="textbox"></td>
+          <td class="textbox"></td>
+          <td class="textbox"></td>
+          <td class="textbox"></td>
+          <td class="textbox"></td>
           </tr>
       </tbody>
     </table>
