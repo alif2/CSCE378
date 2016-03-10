@@ -58,9 +58,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-12">
-    <form role="form" method="POST">
-      <button type="submit" class="btn btn-default btnsm" id="">Work History</button>
-    </form>
+      <button type="submit" class="btn btn-default btnsm" id="">Loading Working History</button>    </form>
   </div>
 </div>
 <?php
