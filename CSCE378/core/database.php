@@ -26,6 +26,7 @@ function database_add_user($s_email, $s_salt, $s_hash) {
     
     return $s_stmt->execute();
 }
+
 function database_get_salt($s_email){
      $dbh = get_database();
     
@@ -33,9 +34,8 @@ function database_get_salt($s_email){
      $s_stmt->bindParam(':s_email', $s_email);
      $s_stmt->execute();
      return $s_stmt->fetch();
- 
-
 }
+
 function database_get_hash($s_email) {
     $dbh = get_database();
     
@@ -43,5 +43,35 @@ function database_get_hash($s_email) {
     $s_stmt->bindParam(':s_email', $s_email);
     $s_stmt->execute();
     return $s_stmt->fetch();
-     
+
+function database_get_user_clock_status($i_user_id) {
+    $dbh = get_database();
+    
+    $s_stmt = $dbh->prepare('SELECT TimeTrackingEventType FROM TimeTrackingEvents WHERE UserID = :i_user_id ORDER BY TimeTrackingEventID DESC LIMIT 1');
+    $s_stmt->bindParam(':i_user_id', $i_user_id);
+    
+    $s_stmt->execute();
+    return $s_stmt->fetch()[0];
+}
+
+function database_get_user_last_event_time($i_user_id) {
+    $dbh = get_database();
+    
+    $s_stmt = $dbh->prepare('SELECT TimeUTC FROM TimeTrackingEvents WHERE UserID = :i_user_id ORDER BY TimeTrackingEventID DESC LIMIT 1');
+    $s_stmt->bindParam(':i_user_id', $i_user_id);
+    
+    $s_stmt->execute();
+    return $s_stmt->fetch()[0];
+}
+
+# Clock in or out
+function database_user_create_time_tracking_event($s_event_type, $i_user_id, $dt_clock_time_utc) {
+    $dbh = get_database();
+    
+    $s_stmt = $dbh->prepare('INSERT INTO TimeTrackingEvents(TimeTrackingEventType, UserID, TimeUTC) VALUES (:s_time_tracking_event_type, :i_user_id, :dt_time_utc)');
+    $s_stmt->bindParam(':s_time_tracking_event_type', $s_event_type);
+    $s_stmt->bindParam(':i_user_id', $i_user_id);
+    $s_stmt->bindParam(':dt_time_utc', $dt_clock_time_utc);
+    
+    return $s_stmt->execute();
 }
