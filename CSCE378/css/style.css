@@ -14,3 +14,14 @@
   float: right;
   border-radius: 10px;
 }
+.btnssm {
+  font-size: 8px;
+  float: left;
+  border-radius: 10px;
+}
+.small {
+  font-size: 12px;
+}
+.med {
+  font-size: 16px;
+}
