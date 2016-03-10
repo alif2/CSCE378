@@ -43,6 +43,7 @@ function database_get_hash($s_email) {
     $s_stmt->bindParam(':s_email', $s_email);
     $s_stmt->execute();
     return $s_stmt->fetch();
+}
 
 function database_get_user_clock_status($i_user_id) {
     $dbh = get_database();
