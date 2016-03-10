@@ -46,15 +46,15 @@ function html_nav() {
     echo '<nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="">Time Tracker</a>
+        <a class="navbar-brand" href="/">Time Tracker</a>
       </div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
         <li><a href="/submit_correction.php">Correction Form</a></li>
         <li><a href="/pay_calculator.php">Pay Calculator</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Hello, Username</a></li>
+        <li><a href="">Hello, Username</a></li>
       </ul>
     </div>
   </nav>';

@@ -9,6 +9,12 @@ html_top();
       <button type="submit" class="btn btn-default btnlg" id="clock-in">CLOCK IN</button>
       <button type="submit" class="btn btn-default btnlg" id="clock-out">CLOCK OUT</button>
     </form>
+    <?php $s_user_clock_status = database_get_user_clock_status(1);
+    if($s_user_clock_status == 'ClockIn') {?>
+        <script>$('#clock-in').hide();</script>
+    <?php } else { ?>
+    <script>$('#clock-out').hide();</script>
+    <?php } ?>
   </div>
   <div class="col-md-2">
     <div>Current Time:</div>
@@ -19,7 +25,7 @@ html_top();
   	<span id="clock"></span><br>
     <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
     <span id="working-hours"></span>
-    </div>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-12">
@@ -52,22 +58,10 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-12">
-  <p></p>
-    <form class="" role="form" method="POST">
-      <button type="submit" class="btn btn-default btnsm" id="">Loading Working History</button>
+    <form role="form" method="POST">
+      <button type="submit" class="btn btn-default btnsm" id="">Work History</button>
     </form>
   </div>
 </div>
 <?php
 html_bottom();
-
-$s_user_clock_status = database_get_user_clock_status(1);
-if($s_user_clock_status == 'ClockIn') {
-?>
-<script>$('#clock-in').hide();</script>
-<?php
-} else {
-?>
-<script>$('#clock-out').hide();</script>
-<?php  
-}
