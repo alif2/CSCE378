@@ -17,14 +17,6 @@ html_top();
   </div>
   <div class="col-md-6">
   	<span id="clock"></span><br>
-     <?php
-    if(database_get_user_clock_status(1) == 'ClockIn') {
-        $s_clock_in_time = database_get_user_last_event_time(1);
-        $i_work_hours = (strtotime('now') - strtotime($s_clock_in_time)) / 3600.0;
-        echo 'Clock In Time: ' . $s_clock_in_time . '<br>';
-        echo 'Working Hours: ' . round($i_work_hours, 2) . '<br>'; 
-    }
-    ?>
     <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
     <span id="working-hours"></span>
     </div>
