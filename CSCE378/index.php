@@ -10,6 +10,7 @@ html_top();
       <button type="submit" class="btn btn-default btnlg" id="clock-out">CLOCK OUT</button>
     </form>
   </div>
+<<<<<<< HEAD
   <div class="col-md-2">
     <div>Current Time:</div>
     <div>Clock-In Time:</div>
@@ -27,6 +28,12 @@ html_top();
     ?>
     <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
     <span id="working-hours"></span>
+=======
+  <div class="col-md-8">
+    Current Time: <span id="clock"></span><br>
+    Clock-In Time: <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
+    Working Duration: <span id="working-hours"></span>
+>>>>>>> origin/dev
   </div>
 </div>
 <div class="row">
