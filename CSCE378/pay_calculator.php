@@ -24,9 +24,9 @@ html_top();
   </div>
   <div class="col-md-4">
     <form class="" role="form" method="POST">
-      <button type="submit" class="btn btn-default btnssm" id="">Load</button><br>
-      <button type="submit" class="btn btn-default btnssm" id="">Load</button><br>
-      <button type="submit" class="btn btn-default btnssm" id="">Calculate</button><br>
+      <button type="submit" class="btn btn-default btnssm">Load</button><br>
+      <button type="submit" class="btn btn-default btnssm">Load</button><br>
+      <button type="submit" class="btn btn-default btnssm">Calculate</button><br>
     </form>
   </div>
 </div>
