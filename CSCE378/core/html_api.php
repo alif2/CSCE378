@@ -50,7 +50,7 @@ function html_nav() {
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="">Home</a></li>
-        <li><a href="/submit_correction.php">Submit Correction</a></li>
+        <li><a href="/submit_correction.php">Correction Form</a></li>
         <li><a href="/pay_calculator.php">Pay Calculator</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
