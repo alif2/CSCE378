@@ -1,10 +1,13 @@
 .btnlg {
-	font-family: Helvetica, Arial;
 	font-size: 36px;
+	float: center;
 }
 .ptable {
 	text-align: center;
-	width: 800px;
+	width: 940px;
 	height: 100px;
-	
+}
+.btnsm {
+  font-size: 13px;
+  float: right;
 }

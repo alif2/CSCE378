@@ -10,8 +10,13 @@ html_top();
       <button type="submit" class="btn btn-default btnlg" id="clock-out">CLOCK OUT</button>
     </form>
   </div>
-  <div class="col-md-8">
-    Current Time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="clock"></span><br>
+  <div class="col-md-2">
+    <div>Current Time:</div>
+    <div>Clock-In Time:</div>
+    <div>Working Duration:</div>
+  </div>
+  <div class="col-md-6">
+  	<span id="clock"></span><br>
      <?php
     if(database_get_user_clock_status(1) == 'ClockIn') {
         $s_clock_in_time = database_get_user_last_event_time(1);
@@ -20,8 +25,8 @@ html_top();
         echo 'Working Hours: ' . round($i_work_hours, 2) . '<br>'; 
     }
     ?>
-    Clock-In Time:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
-    Working Duration:&nbsp&nbsp&nbsp&nbsp<span id="working-hours"></span>
+    <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
+    <span id="working-hours"></span>
   </div>
 </div>
 <div class="row">
@@ -51,6 +56,14 @@ html_top();
           </tr>
       </tbody>
     </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  <p></p>
+    <form class="" role="form" method="POST">
+      <button type="submit" class="btn btn-default btnsm" id="">Loading Working History</button>
+    </form>
   </div>
 </div>
 <?php
