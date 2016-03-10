@@ -8,7 +8,7 @@ $s_event_type = '';
 if($s_user_clock_status == 'ClockIn') {
     $s_event_type = 'ClockOut';
     
-} else if($s_user_clock_status == 'ClockOut') {
+} else if($s_user_clock_status == null || $s_user_clock_status == 'ClockOut') {
     $s_event_type = 'ClockIn';
     
 } else {
