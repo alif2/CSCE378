@@ -10,6 +10,8 @@ window.onload = function getTime() {
 };
 
 $(document).ready(function() {
+   $('.datepicker').datepicker();
+   
    $('.clock-form').submit(function(event) {
        var now = new Date();
        $.ajax({

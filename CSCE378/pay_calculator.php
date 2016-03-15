@@ -17,15 +17,13 @@ html_top();
   </div>
   <div class="col-md-6">
     <form action="">
-    <input type="text" date="startdate"><br>
-    <input type="text" date="enddate"><br>
+    <input type="text" class="datepicker" date="startdate"><br>
+    <input type="text" class="datepicker" date="enddate"><br>
     <input type="text" date="wageperhour"><br><br>
     </form>
   </div>
   <div class="col-md-4">
     <form class="" role="form" method="POST">
-      <button type="submit" class="btn btn-default btnssm">Load</button><br>
-      <button type="submit" class="btn btn-default btnssm">Load</button><br>
       <button type="submit" class="btn btn-default btnssm">Calculate</button><br>
     </form>
   </div>
