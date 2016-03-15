@@ -2,6 +2,7 @@
 require_once('core.php');
 html_top();
 ?>
+
 <div class="row">
   <div class="col-md-12">
     <h1>Pay Calculator</h1><br>
@@ -10,19 +11,23 @@ html_top();
 <div class="row">
   <div class="col-md-2">
     <form action="">
-    <p>*Start Date</p>
-    <p>*End Date</p>
+    <p>*Start Date</p><br>
+    <p>*End Date</p><br>
     <p>*Wage Per Hour</p><br>
     </form>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-10">
     <form action="">
-    <input type="text" class="datepicker" date="startdate"><br>
-    <input type="text" class="datepicker" date="enddate"><br>
-    <input type="text" date="wageperhour"><br><br>
-    <form class="" role="form" method="POST">
-      <button type="submit" class="btn btn-default btnmed">Calculate</button><br>
-    </form>
+    <input type="text" class="datepicker" date="startdate" size="25"><br><br>
+    <input type="text" class="datepicker" date="enddate" size="25"><br><br>
+    <input type="text" date="wageperhour" size="25"><br><br>
+    <div class="col-md-1"></div>
+    <div class="col-md-1">
+      <form class="" role="form" method="POST">
+        <button type="submit" class="btn btn-default btnsm">Calculate</button><br>
+      </form>
+    </div>
+    <div class="col-md-7"></div>
   </div>
 </div>
 <div class="row">
@@ -35,5 +40,6 @@ html_top();
     <h2>Total Wage = $</h2>
   </div>
 </div>
+
 <?php
 html_bottom();

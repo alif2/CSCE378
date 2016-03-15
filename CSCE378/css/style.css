@@ -9,15 +9,9 @@
 .textbox {
   text-align: center;
 }
-.btnmed {
-  font-size: 13px;
+.btnsm {
+  font-size: 14px;
   float: left;
-  border-radius: 10px;
-  padding: 8px 48px;
-}
-.small {
-  font-size: 12px;
-}
-.med {
-  font-size: 16px;
+  border-radius: 20px;
+  padding: 6px 17px;
 }
