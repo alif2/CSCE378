@@ -45,7 +45,7 @@ function html_container_start() {
 }
 
 function html_nav() {
-    echo '<nav class="navbar navbar-default">
+    echo '<nav class="navbar">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">Time Tracker</a>

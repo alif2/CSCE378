@@ -1,18 +1,9 @@
-window.onload = function getTime() {
-    var now = new Date();
-    $('#clock').text(now.toISOString());
-    
-    var clockInTime = new Date($('#clock-in-time').text());
-    
-    var workHours = ((now - clockInTime) / 3600000.0).toFixed(2);
-    $('#working-hours').text(workHours);
-    setTimeout(getTime, 500);
-};
-
 $(document).ready(function() {
-   $('.datepicker').datepicker();
+    $('.datepicker').datepicker();
+    getClockInTime();
+    getTime();
    
-   $('.clock-form').submit(function(event) {
+    $('.clock-form').submit(function(event) {
        var now = new Date();
        $.ajax({
            type: 'POST',
@@ -32,5 +23,27 @@ $(document).ready(function() {
        });
        
        event.preventDefault();
-   });
+    });
+   
+    function getClockInTime() {
+        $.ajax({
+            type: 'POST',
+            url: '/app/user_clock_status.php',
+            success: function (data) {
+                var clockIn = new Date(data);
+                $('#clock-in-time').text(clockIn.toLocaleDateString() + ' ' + clockIn.toLocaleTimeString());
+            }
+        });
+    }
+   
+    function getTime() {
+        var now = new Date();
+        $('#clock').text(now.toLocaleDateString() + ' ' + now.toLocaleTimeString());
+    
+        var clockInTime = new Date($('#clock-in-time').text());
+    
+        var workHours = ((now - clockInTime) / 3600000.0).toFixed(2);
+        $('#working-hours').text(workHours);
+        setTimeout(getTime, 500);
+    };
 });

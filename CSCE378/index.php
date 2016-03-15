@@ -23,7 +23,7 @@ html_top();
   </div>
   <div class="col-md-6">
   	<span id="clock"></span><br>
-    <span id="clock-in-time"><?php echo database_get_user_last_event_time(1)?></span><br>
+    <span id="clock-in-time"></span><br>
     <span id="working-hours"></span>
   </div>
 </div>
@@ -58,7 +58,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-12">
-      <button type="submit" class="btn btn-default btnsm" id="">Loading Working History</button>    </form>
+      <button type="submit" class="btn btn-default btnsm" id="">Loading Working History</button>
   </div>
 </div>
 <?php
