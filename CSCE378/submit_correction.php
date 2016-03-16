@@ -8,7 +8,7 @@ html_top();
     <h1>Correction Form</h1>
   </div>
 </div>
-<form role="form" action="" method="POST">
+<form role="form" action="" method="POST" id="correction-form">
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-2">

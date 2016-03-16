@@ -30,3 +30,7 @@ nav a {
   border-radius: 20px;
   padding: 6px 17px;
 }
+
+#correction-form textarea {
+  width: 100%;
+}
