@@ -18,8 +18,8 @@ html_top();
   </div>
   <div class="col-md-2">
     <div>Current Time:</div>
-    <div>Clock-In Time:</div>
-    <div>Working Duration:</div>
+    <div>Clock In Time:</div>
+    <div>Hours Today:</div>
   </div>
   <div class="col-md-6">
   	<span id="clock"></span><br>

@@ -9,31 +9,43 @@ html_top();
   </div>
 </div>
 <div class="row">
-  <div class="col-md-1">
-    <form action="">
-    <p>*Date</p><br>
-    <p>*Duration</p><br>
-    <p>&nbspComments</p><br>
-    </form>
+  <div class="col-md-12">
+    <div class="col-md-2">
+      <p>*Date:</p>
+    </div>
+    <div class="col-md-4">
+      <input type="date">
+    </div>
   </div>
-  <div class="col-md-11">
-    <form action="">
-    <input type="date" size="25"><br><br>
-    <input type="date" size="25"><br><br>
-    <textarea rows="7" cols="73"></textarea><br><br>
-    <div class="col-md-4"></div>
+  <div class="col-md-12">
+    <div class="col-md-2">
+      <p>*Duration:</p>
+    </div>
+    <div class="col-md-4">
+      <input type="date">
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-2">
+      <p>&nbsp;Comments:</p>
+    </div>
+    <div class="col-md-4">
+      <textarea rows="7" cols="73"></textarea>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-2"></div>
     <div class="col-md-1">
-        <button type="submit" class="btn btn-default btnsm">Cancel</button><br>
+        <button type="submit" class="btn btn-default btnsm">Submit</button>
     </div>
     <div class="col-md-1">
-        <button type="submit" class="btn btn-default btnsm">Submit</button><br>
+        <button type="submit" class="btn btn-default btnsm">Cancel</button>
     </div>
-    <div class="col-md-4"></div>
   </div>
 </div>
 <div class="row">
   <div class="col-md-12">
-    <br><p  class="small">* is the required information</p>
+    <br><p  class="small">* is a required field</p>
   </div>
 </div>
 

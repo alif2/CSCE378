@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('.datepicker').datepicker();
     getClockInTime();
     getTime();
    
