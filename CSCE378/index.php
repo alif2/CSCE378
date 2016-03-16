@@ -58,7 +58,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-12">
-      <button type="submit" class="btn btn-default btnsm" id="">Loading Working History</button>
+      <button type="submit" class="btn btn-default btnsm" id="">View History</button>
   </div>
 </div>
 <?php

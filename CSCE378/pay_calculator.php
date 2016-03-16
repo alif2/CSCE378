@@ -32,7 +32,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-12">
-    <br><p  class="small">* is the required information</p>
+    <br><p  class="small">* is a required field</p>
   </div>
 </div>
 <div class="row">

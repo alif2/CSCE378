@@ -14,10 +14,15 @@ $(document).ready(function() {
        .done(function(data) {
           if(data === 'ClockIn') {
               $('#clock-out').show();
+              $('#clock-in-time').show();
+              $('#working-hours').show();
+              
               $('#clock-in').hide();
           } else if(data === 'ClockOut') {
               $('#clock-in').show();
               $('#clock-out').hide();
+              $('#clock-in-time').hide();
+              $('#working-hours').hide();
           }
        });
        
