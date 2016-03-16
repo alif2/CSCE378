@@ -18,8 +18,8 @@ html_top();
   </div>
   <div class="col-md-11">
     <form action="">
-    <input type="date" size="25"><br><br>
-    <input type="date" size="25"><br><br>
+    <input type="tel" size="25" required><br><br>
+    <input type="text" size="25" required><br><br>
     <textarea rows="7" cols="73"></textarea><br><br>
     <div class="col-md-4"></div>
     <div class="col-md-1">

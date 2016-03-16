@@ -18,9 +18,9 @@ html_top();
   </div>
   <div class="col-md-10">
     <form action="">
-    <input type="text" class="datepicker" date="startdate" size="25"><br><br>
-    <input type="text" class="datepicker" date="enddate" size="25"><br><br>
-    <input type="text" date="wageperhour" size="25"><br><br>
+    <input type="text" class="datepicker" date="startdate" size="25" required><br><br>
+    <input type="text" class="datepicker" date="enddate" size="25" required><br><br>
+    <input type="text" date="wageperhour" size="25" required><br><br>
     <div class="col-md-1"></div>
     <div class="col-md-1">
       <form class="" role="form" method="POST">
