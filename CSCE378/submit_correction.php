@@ -23,7 +23,7 @@ html_top();
         <p>*Duration:</p>
       </div>
       <div class="col-md-4">
-        <input type="date" required>
+        <input type="number" required>
       </div>
     </div>
     <div class="col-md-12">
