@@ -16,16 +16,34 @@ html_top();
     <script>$('#clock-out').hide();</script>
     <?php } ?>
   </div>
-  <div class="col-md-2">
-    <div>Current Time:</div>
-    <div>Clock In Time:</div>
-    <div>Hours Today:</div>
-  </div>
-  <div class="col-md-6">
-  	<span id="clock"></span><br>
-    <span id="clock-in-time"></span><br>
-    <span id="working-hours"></span>
-  </div>
+  <div class="col-md-8">
+		<form role="form" action="" method="POST">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					Current Time:
+				</div>
+				<div class="col-md-9">
+					<span id="clock"></span><br>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-3">
+					Clock In Time:
+				</div>
+				<div class="col-md-9">
+					<span id="clock-in-time"></span><br>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-3">
+					Hours Today:
+				</div>
+				<div class="col-md-9">
+					<span id="working-hours"></span>
+				</div>
+			</div>
+    </div>
 </div>
 <div class="row">
   <div class="col-md-12">
