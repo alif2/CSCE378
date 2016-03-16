@@ -18,6 +18,11 @@ html_top();
         <input type="date" required>
       </div>
     </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
         *End Date:
@@ -26,6 +31,11 @@ html_top();
         <input type="date" required>
       </div>
     </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
         *Wage Per Hour:
@@ -34,6 +44,11 @@ html_top();
         <input type="number" required>
       </div>
     </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2"></div>
       <div class="col-md-1">

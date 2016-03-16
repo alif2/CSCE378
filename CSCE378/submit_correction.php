@@ -18,6 +18,11 @@ html_top();
         <input type="date" required>
       </div>
     </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
         *Duration:
@@ -26,14 +31,24 @@ html_top();
         <input type="number" required>
       </div>
     </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
         &nbsp;Comments:
       </div>
-      <div class="col-md-4">
+      <div class="col-md-7">
         <textarea rows="7"></textarea>
       </div>
     </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
+    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2"></div>
       <div class="col-md-1">

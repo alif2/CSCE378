@@ -2,6 +2,10 @@ input, textarea {
   color: black;
 }
 
+input {
+  width: 170px;
+}
+
 nav {
   background-color: orange;
 }
@@ -28,7 +32,7 @@ nav a {
   font-size: 14px;
   float: left;
   border-radius: 20px;
-  padding: 6px 17px;
+  padding: 6px 14px;
 }
 
 #correction-form textarea {
