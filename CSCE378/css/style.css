@@ -1,14 +1,9 @@
-body {
-  background-color: teal;
-  color: white;
-}
-
 input, textarea {
   color: black;
 }
 
 nav {
-  background-color: #333331;
+  background-color: orange;
 }
 
 nav a {
@@ -19,13 +14,16 @@ nav a {
 	font-size: 36px;
 	border-radius: 10px;
 }
+
 .ptable {
 	width: 940px;
 	height: 100px;
 }
+
 .textbox {
   text-align: center;
 }
+
 .btnsm {
   font-size: 14px;
   float: left;
