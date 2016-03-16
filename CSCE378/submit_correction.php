@@ -5,7 +5,7 @@ html_top();
 
 <div class="row">
   <div class="col-md-12">
-    <h1>Correction Form</h1><br>
+    <h1>Correction Form</h1>
   </div>
 </div>
 <div class="row">
@@ -14,7 +14,7 @@ html_top();
       <p>*Date:</p>
     </div>
     <div class="col-md-4">
-      <input type="date">
+      <input type="date" required>
     </div>
   </div>
   <div class="col-md-12">
@@ -22,7 +22,7 @@ html_top();
       <p>*Duration:</p>
     </div>
     <div class="col-md-4">
-      <input type="date">
+      <input type="date" required>
     </div>
   </div>
   <div class="col-md-12">
@@ -30,7 +30,7 @@ html_top();
       <p>&nbsp;Comments:</p>
     </div>
     <div class="col-md-4">
-      <textarea rows="7" cols="73"></textarea>
+      <textarea rows="7"></textarea>
     </div>
   </div>
   <div class="col-md-12">
@@ -45,7 +45,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-12">
-    <br><p  class="small">* is a required field</p>
+    <br><p class="small">* is a required field</p>
   </div>
 </div>
 
