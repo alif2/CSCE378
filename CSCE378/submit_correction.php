@@ -17,7 +17,6 @@ html_top();
     </form>
   </div>
   <div class="col-md-11">
-    <form action="">
     <input type="text" class="datepicker" date="startdate" size="25"><br><br>
     <input type="text" class="datepicker" date="enddate" size="25"><br><br>
     <textarea rows="7" cols="73"></textarea><br><br>
