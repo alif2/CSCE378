@@ -18,19 +18,15 @@ html_top();
   </div>
   <div class="col-md-11">
     <form action="">
-    <input type="text" class="datepicker" date="startdate" size="25"><br><br>
-    <input type="text" class="datepicker" date="enddate" size="25"><br><br>
+    <input type="date" size="25"><br><br>
+    <input type="date" size="25"><br><br>
     <textarea rows="7" cols="73"></textarea><br><br>
     <div class="col-md-4"></div>
     <div class="col-md-1">
-      <form class="" role="form" method="POST">
         <button type="submit" class="btn btn-default btnsm">Cancel</button><br>
-      </form>
     </div>
     <div class="col-md-1">
-      <form class="" role="form" method="POST">
         <button type="submit" class="btn btn-default btnsm">Submit</button><br>
-      </form>
     </div>
     <div class="col-md-4"></div>
   </div>
