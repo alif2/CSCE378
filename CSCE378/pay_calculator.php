@@ -8,47 +8,32 @@ html_top();
     <h1>Pay Calculator</h1><br>
   </div>
 </div>
-<form role="form" action="" method="POST" id="correction-form">
+<form role="form" action="" method="POST">
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-2">
-        *Start Date:
+        <p>*Start Date:</p>
       </div>
       <div class="col-md-4">
         <input type="date" required>
       </div>
     </div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
-        *End Date:
+        <p>*End Date:</p>
       </div>
       <div class="col-md-4">
         <input type="date" required>
       </div>
     </div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
-        *Wage Per Hour:
+        <p>*Wage Per Hour:</p>
       </div>
       <div class="col-md-4">
         <input type="number" required>
       </div>
     </div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2"></div>
       <div class="col-md-1">
@@ -59,7 +44,7 @@ html_top();
 </form>
 <div class="row">
   <div class="col-md-12">
-    <br><p  class="small">* is a required field</p>
+    <br><p class="small">* is a required field</p>
   </div>
 </div>
 <div class="row">

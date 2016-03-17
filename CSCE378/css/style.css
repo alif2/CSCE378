@@ -24,7 +24,8 @@ nav a {
 	height: 100px;
 }
 
-.textbox {
+.ptable th,
+.ptable td {
   text-align: center;
 }
 

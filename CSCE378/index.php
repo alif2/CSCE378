@@ -17,33 +17,33 @@ html_top();
     <?php } ?>
   </div>
   <div class="col-md-8">
-		<form role="form" action="" method="POST">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="col-md-3">
-					Current Time:
-				</div>
-				<div class="col-md-9">
-					<span id="clock"></span><br>
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="col-md-3">
-					Clock In Time:
-				</div>
-				<div class="col-md-9">
-					<span id="clock-in-time"></span><br>
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="col-md-3">
-					Hours Today:
-				</div>
-				<div class="col-md-9">
-					<span id="working-hours"></span>
-				</div>
-			</div>
+	<div class="row">
+	  <div class="col-md-12">
+		<div class="col-md-3">
+		  Current Time:
+		</div>
+		<div class="col-md-9">
+		  <span id="clock"></span><br>
+		</div>
+	  </div>
+	  <div class="col-md-12">
+		<div class="col-md-3">
+		  Clock In Time:
+		</div>
+		<div class="col-md-9">
+		  <span id="clock-in-time"></span><br>
+		</div>
+	  </div>
+	  <div class="col-md-12">
+		<div class="col-md-3">
+		  Hours Today:
+		</div>
+		<div class="col-md-9">
+		  <span id="working-hours"></span>
+		</div>
+	  </div>
     </div>
+  </div>
 </div>
 <div class="row">
   <div class="col-md-12">
@@ -51,24 +51,24 @@ html_top();
     <table class="table-bordered ptable">
       <thead>
         <tr>
-          <th class="textbox">Monday Feb.2</th>
-          <th class="textbox">Tuesday Feb.3</th>
-          <th class="textbox">Wednesday Feb.4</th>
-          <th class="textbox">Thursday Feb.5</th>
-          <th class="textbox">Friday Feb.6</th>
-          <th class="textbox">Saturday Feb.7</th>
-          <th class="textbox">Sunday Feb.8</th>
+          <th>Monday Feb.2</th>
+          <th>Tuesday Feb.3</th>
+          <th>Wednesday Feb.4</th>
+          <th>Thursday Feb.5</th>
+          <th>Friday Feb.6</th>
+          <th>Saturday Feb.7</th>
+          <th>Sunday Feb.8</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="textbox">5.2</td>
-          <td class="textbox">4.3</td>
-          <td class="textbox"></td>
-          <td class="textbox"></td>
-          <td class="textbox"></td>
-          <td class="textbox"></td>
-          <td class="textbox"></td>
+          <td>5.2</td>
+          <td>4.3</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
           </tr>
       </tbody>
     </table>

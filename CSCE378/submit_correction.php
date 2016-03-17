@@ -12,43 +12,28 @@ html_top();
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-2">
-        *Date:
+        <p>*Date:</p>
       </div>
       <div class="col-md-4">
         <input type="date" required>
       </div>
     </div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
-        *Duration:
+        <p>*Duration:</p>
       </div>
       <div class="col-md-4">
         <input type="number" required>
       </div>
     </div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2">
-        &nbsp;Comments:
+        <p>&nbsp;Comments:</p>
       </div>
       <div class="col-md-7">
         <textarea rows="7"></textarea>
       </div>
     </div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
-    <div class="col-md-12"></div>
     <div class="col-md-12">
       <div class="col-md-2"></div>
       <div class="col-md-1">
