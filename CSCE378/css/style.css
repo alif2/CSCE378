@@ -1,5 +1,13 @@
+body {
+  background-color: #F8F8F8;
+}
+
 input, textarea {
-  color: black;
+  color: #000000;
+}
+
+textarea {
+  border-color: #E0E0E0;
 }
 
 input {
@@ -15,18 +23,17 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #FFFFFF;
 }
 
 .nav li > a:hover {
   background-color: #1992D4;
-  border-color: white;
-  color: ;
+  border-color: #FFFFFF;
 }
 
 .btn-default {
   background-color: #1992D4;
-  color: white;
+  color: #FFFFFF;
   border-color: #1992D4;
 }
 
@@ -37,7 +44,7 @@ nav a {
 }
 
 .btn-default:hover {
-  color: white;
+  color: #FFFFFF;
   background-color: #1A74BA;
   border-color: #1A74BA;
 }
@@ -48,6 +55,7 @@ nav a {
 }
 
 .ptable {
+  background-color: white;
 	width: 940px;
 	height: 100px;
 }
