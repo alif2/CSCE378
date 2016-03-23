@@ -23,7 +23,7 @@ html_top();
         <p>*Duration:</p>
       </div>
       <div class="col-md-4">
-        <input type="number" required>
+        <input type="number" step="0.01" min="0" required>
       </div>
     </div>
     <div class="col-md-12">
@@ -40,7 +40,7 @@ html_top();
         <button type="submit" class="btn btn-default btnsm">Submit</button>
       </div>
       <div class="col-md-1">
-        <button type="submit" class="btn btn-default btnsm">Cancel</button>
+        <button type="reset" class="btn btn-default btnsm">Clear</button>
       </div>
     </div>
   </div>

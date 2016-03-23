@@ -31,7 +31,7 @@ html_top();
         <p>*Wage Per Hour:</p>
       </div>
       <div class="col-md-4">
-        <input type="number" required>
+        <input type="number" step="0.01" min="0" required>
       </div>
     </div>
     <div class="col-md-12">
@@ -49,7 +49,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-6">
-    <h2>Total Wage = $</h2>
+    <h2>Total Pay = $</h2>
   </div>
 </div>
 
