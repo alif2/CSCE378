@@ -47,7 +47,7 @@ html_top();
 </form>
 <div class="row">
   <div class="col-md-12">
-    <br><p class="small">* is a required field</p>
+    <br><p class="small">* Indicates required field</p>
   </div>
 </div>
 
