@@ -7,26 +7,20 @@ $(document).ready(function() {
        $.ajax({
            type: 'POST',
            url: '/app/clock_events.php',
-           data: {
-               'time': now.toISOString()
-           }
+           data: { 'time': now.toISOString() }
        })
        .done(function(data) {
-          if(data === 'ClockIn') {
-              $('#clock-out').show();
-              $('#clock-in-time').show();
-              $('#working-hours').show();
-              
-              $('#clock-in').hide();
-          } else if(data === 'ClockOut') {
-              $('#clock-in').show();
-              $('#clock-out').hide();
-              $('#clock-in-time').hide();
-              $('#working-hours').hide();
-          }
+          location.reload();
        });
        
        event.preventDefault();
+    });
+   
+    $('#correction-form').submit(function(event) {
+        event.preventDefault();
+        $(this).reset();
+        
+       $('.submit-success').show();
     });
    
     function getClockInTime() {

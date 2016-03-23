@@ -42,12 +42,13 @@ html_top();
       <div class="col-md-1">
         <button type="reset" class="btn btn-default btnsm">Clear</button>
       </div>
+      <div class="col-md-2 submit-success" hidden>Submitted successfully</div>
     </div>
   </div>
 </form>
 <div class="row">
   <div class="col-md-12">
-    <br><p class="small">* Indicates required field</p>
+    <p class="small">* Indicates required field</p>
   </div>
 </div>
 
