@@ -6,12 +6,40 @@ input {
   width: 170px;
 }
 
+.active {   /*Focus Nav Color*/
+  background-color: #1A74BA;
+}
+
 nav {
-  background-color: orange;
+  background-color: #1992D4;
 }
 
 nav a {
   color: white;
+}
+
+.nav li > a:hover {
+  background-color: #1992D4;
+  border-color: white;
+  color: ;
+}
+
+.btn-default {
+  background-color: #1992D4;
+  color: white;
+  border-color: #1992D4;
+}
+
+.btn-default:focus {
+  color: #1A74BA;
+  background-color: #e6e6e6;
+  border-color: #8c8c8c;
+}
+
+.btn-default:hover {
+  color: white;
+  background-color: #1A74BA;
+  border-color: #1A74BA;
 }
 
 .btnlg {

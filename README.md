@@ -1,2 +1,2 @@
-# CSCE378
+# CSCE 378
 Class project
