@@ -31,7 +31,7 @@ require('core.php');
    }
 //  ----------------------------------------------------------------------------------
       $i_user_id = 1;
-      $s_time_UTC = "2016-03-10";
+      $s_time_UTC = "2016-03-26";
       $s_db_time = database_get_user_specific_time($i_user_id,$s_time_UTC);
       echo "\n" . 'the user_id is ' . $i_user_id;
       echo "\n" . 'the input time is ' . $s_time_UTC;
