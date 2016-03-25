@@ -37,10 +37,10 @@ html_top();
     <div class="col-md-12">
       <div class="col-md-2"></div>
       <div class="col-md-1">
-        <button type="submit" class="btn btn-default btnsm">Submit</button>
+        <button type="submit" class="btn btn-default btnsm btnl">Submit</button>
       </div>
       <div class="col-md-1">
-        <button type="reset" class="btn btn-default btnsm">Clear</button>
+        <button type="reset" class="btn btn-default btnsm btnl">Clear</button>
       </div>
       <div class="col-md-2 submit-success" hidden>
         <p>Submitted successfully</p>

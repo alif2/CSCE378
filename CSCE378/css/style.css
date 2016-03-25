@@ -65,9 +65,16 @@ nav a {
   text-align: center;
 }
 
+.btnr {
+  float: right;
+}
+
+.btnl {
+  float: left;
+}
+
 .btnsm {
   font-size: 14px;
-  float: left;
   border-radius: 20px;
   padding: 6px 14px;
 }
