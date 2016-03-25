@@ -21,7 +21,7 @@ require('core.php');
       }
    return $date;
 }
-   function get_hours($s_date_time){
+   function get_hours($s_date_time){       //get the hours from the single day and cal the hours without rand
       $date = new DateTime('0000-01-01 00:00:00');
       $s_date_diff = $s_date_time->diff($date);
       $s_hours = $s_date_diff->h;
@@ -29,26 +29,19 @@ require('core.php');
       $s_hours = $s_hours + ($s_mins / 60.0 );
       return $s_hours;
    }
+   function user_hours_get($i_user_id, $s_time_UTC){
+      $s_db_time = database_get_user_specific_time($i_user_id,$s_time_UTC);  //get the UTC_time from the database
+      $s_mydate = get_time_diff($s_db_time); //using func to get single day hours and mins
+      $s_working_hours = get_hours($s_mydate);  //calculate to only hours
+      return $s_working_hours;
+   }
 //  ----------------------------------------------------------------------------------
+     
       $i_user_id = 1;
       $s_time_UTC = "2016-03-26";
-      $s_db_time = database_get_user_specific_time($i_user_id,$s_time_UTC);
-      echo "\n" . 'the user_id is ' . $i_user_id;
-      echo "\n" . 'the input time is ' . $s_time_UTC;
-      echo "\n" .'the user time is';
-      $s_mydate = get_time_diff($s_db_time);
-      $s_working_hours = get_hours($s_mydate);
-      echo $s_working_hours;
+
+      echo user_hours_get( $i_user_id , $s_time_UTC);
       
       echo "<br>";
     
       
-      //$mydate0->sub(new DateInterval($s_db_time[7][0]));
-      //$mydate5 =  $mydate3+$mydate4;
-      //print_r($mydate5);
-      //print_r($s_db_time);
-     // $mydate3 = $mydate1->diff($mydate2);
-     // echo "\n" . 'the convert time is' . $mydate1->format('Y-m-d H:i:s');
-      //echo "\n" . 'the convert time is' . $mydate2->format('Y-m-d H:i:s');
-      //echo $mydate3->format('Y-m-d');
-      //print_r($mydate3);
