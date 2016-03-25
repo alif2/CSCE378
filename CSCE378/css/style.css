@@ -6,7 +6,7 @@ input, textarea {
   color: #000000;
 }
 
-textarea {
+input, textarea {
   border-color: #E0E0E0;
 }
 
@@ -16,6 +16,12 @@ input {
 
 .active {   /*Focus Nav Color*/
   background-color: #1A74BA;
+  
+}
+
+.nav li.active a:hover {
+  background-color: #1A74BA;
+  color: #FFFFFF;
 }
 
 nav {
