@@ -13,8 +13,8 @@ require('core.php');
    $array_size = count($s_UTC);
    $s_work_hours = 0;
    $date = new DateTime('0000-01-01 00:00:00');
-   for($i=0; $i < floor($array_size/2); $i++){
-      $mydate0 = new DateTime($s_UTC[$i*2][0]);
+   for($i=0; $i < floor($array_size/2); $i++){      //loop for getting working hours for each clockin and clockout in one day
+      $mydate0 = new DateTime($s_UTC[$i*2][0]);         
       $mydate1 = new DateTime($s_UTC[$i*2+1][0]);
       $mydate_diff = $mydate0->diff(new DateTime($s_UTC[$i*2+1][0]));
       $date->add($mydate_diff);
@@ -27,18 +27,18 @@ require('core.php');
       $s_hours = $s_date_diff->h;
       $s_mins = $s_date_diff->i;
       $s_hours = $s_hours + ($s_mins / 60.0 );
-      echo $s_hours;
+      return $s_hours;
    }
 //  ----------------------------------------------------------------------------------
       $i_user_id = 1;
-      $s_time_UTC = "2016-03-25";
+      $s_time_UTC = "2016-03-10";
       $s_db_time = database_get_user_specific_time($i_user_id,$s_time_UTC);
       echo "\n" . 'the user_id is ' . $i_user_id;
       echo "\n" . 'the input time is ' . $s_time_UTC;
       echo "\n" .'the user time is';
       $s_mydate = get_time_diff($s_db_time);
-      get_hours($s_mydate);
-      
+      $s_working_hours = get_hours($s_mydate);
+      echo $s_working_hours;
       
       echo "<br>";
     
