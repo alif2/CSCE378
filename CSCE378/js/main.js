@@ -17,31 +17,17 @@ $(document).ready(function() {
     });
    
    $('#pay-calculator').submit(function(event) {
-        $.ajax({
-            type: 'POST',
-            url: '',
-            data: { }
-        })
-        .done(function(data) {
-            
-        });
-        
         event.preventDefault();
-        $('.total-pay').val('9001.05');
+        $('.total-pay').text('1234.56');
    });
    
     $('#correction-form').submit(function(event) {        
-        $.ajax({
-            type: 'POST',
-            url: '',
-            data: { }
-        })
-        .done(function(data) {
-            
-        });
         event.preventDefault();
-        
         $('.submit-success').show();
+    });
+   
+    $('#correction-form #clear').click(function() {
+       $('.submit-success').hide(); 
     });
    
     function getClockInTime() {

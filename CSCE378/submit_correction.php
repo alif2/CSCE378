@@ -8,7 +8,7 @@ html_top();
     <h1>Correction Form</h1>
   </div>
 </div>
-<form role="form" action="" method="POST" id="correction-form">
+<form role="form" id="correction-form">
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-2">
@@ -40,7 +40,7 @@ html_top();
         <button type="submit" class="btn btn-default btnsm btnl">Submit</button>
       </div>
       <div class="col-md-1">
-        <button type="reset" class="btn btn-default btnsm btnl">Clear</button>
+        <button type="reset" class="btn btn-default btnsm btnl" id="clear">Clear</button>
       </div>
       <div class="col-md-2 submit-success" hidden>
         <p>Submitted successfully</p>
