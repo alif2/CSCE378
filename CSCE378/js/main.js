@@ -16,10 +16,12 @@ $(document).ready(function() {
        event.preventDefault();
     });
    
-    $('#correction-form').submit(function(event) {
+   $('#pay-calculator').submit(function(event) {
         event.preventDefault();
-        $(this).reset();
-        
+        $('.total-pay').val('9001.05');
+   });
+   
+    $('#correction-form').submit(function(event) {        
        $('.submit-success').show();
     });
    

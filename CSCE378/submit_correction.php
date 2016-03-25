@@ -42,7 +42,9 @@ html_top();
       <div class="col-md-1">
         <button type="reset" class="btn btn-default btnsm">Clear</button>
       </div>
-      <div class="col-md-2 submit-success" hidden>Submitted successfully</div>
+      <div class="col-md-2 submit-success" hidden>
+        <p>Submitted successfully</p>
+      </div>
     </div>
   </div>
 </form>

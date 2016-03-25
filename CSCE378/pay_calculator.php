@@ -8,7 +8,7 @@ html_top();
     <h1>Pay Calculator</h1>
   </div>
 </div>
-<form role="form" action="" method="POST">
+<form role="form" method="POST" class="pay-calculator">
   <div class="row">
     <div class="col-md-12">
       <div class="col-md-2">
@@ -49,7 +49,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-6">
-    <h2>Total Pay = $</h2>
+    <h2>Total Pay = $<span class="total-pay"></span></h2>
   </div>
 </div>
 
