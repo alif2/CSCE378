@@ -89,9 +89,7 @@ function database_user_create_time_tracking_event($s_event_type, $i_user_id, $dt
 function get_time_diff_UTC($s_UTC){
    $array_size = count($s_UTC);
    $s_work_hours = 0;
-   for($i=0; $i < floor($array_size/2); $i++){
-    echo "\n" . 'the login hour' . substr($s_UTC[$i*2][0],-12,2);
-    echo "\n" . 'the logout hour' . substr($s_UTC[$i*2+1][0],-12,2);
+   for($i=0; $i < floor($array_size / 2); $i++){
      $s_work_hours = $s_work_hours + substr($s_UTC[$i*2+1][0],-12,2) - substr($s_UTC[$i*2][0],-12,2);
    }
    return $s_work_hours;
