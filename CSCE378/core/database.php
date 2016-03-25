@@ -65,7 +65,7 @@ function database_get_user_last_event_time($i_user_id) {
     return $s_stmt->fetch()[0];
 }
 
-function database_get_user_specific_time($i_user_id,$s_user_time) {
+function database_user_get_time_tracking_events_by_day($i_user_id, $s_user_time) {
     $dbh = get_database();
     $s_user_time = $s_user_time . '%';
 
@@ -87,27 +87,4 @@ function database_user_create_time_tracking_event($s_event_type, $i_user_id, $dt
     $s_stmt->bindParam(':dt_time_utc', $dt_clock_time_utc);
 
     return $s_stmt->execute();
-}
-
-function get_time_diff_UTC($s_UTC){
-    $array_size = count($s_UTC);
-    $s_work_hours = 0;
-
-    for($i = 0; $i < floor($array_size / 2); $i++){
-        $s_work_hours = $s_work_hours + substr($s_UTC[$i * 2 + 1][0], -12, 2) - substr($s_UTC[$i * 2][0], -12, 2);
-    }
-
-    return $s_work_hours;
-}
-
-function time_diff_datainterval($date0, $date1){
-    $date_diff = new DateInterval();
-
-    $date_diff->y = $date1->y - $date->y;
-    $date_diff->m = $date1->m - $date->m;
-    $date_diff->d = $date1->d - $date->d;
-    $date_diff->h = $date1->h - $date->h;
-    $date_diff->i = $date1->i - $date->i;
-
-    return $date_diff;
 }
