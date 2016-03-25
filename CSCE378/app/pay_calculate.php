@@ -29,7 +29,7 @@ require('core.php');
       $s_hours = $s_hours + ($s_mins / 60.0 );
       return $s_hours;
    }
-   function user_hours_get($i_user_id, $s_time_UTC){
+   function user_hours_get($i_user_id, $s_time_UTC){ //for example $i_user_id = 1; $s_time_UTC = "2016-03-26";
       $s_db_time = database_get_user_specific_time($i_user_id,$s_time_UTC);  //get the UTC_time from the database
       $s_mydate = get_time_diff($s_db_time); //using func to get single day hours and mins
       $s_working_hours = get_hours($s_mydate);  //calculate to only hours
@@ -37,10 +37,8 @@ require('core.php');
    }
 //  ----------------------------------------------------------------------------------
      
-      $i_user_id = 1;
-      $s_time_UTC = "2016-03-26";
 
-      echo user_hours_get( $i_user_id , $s_time_UTC);
+
       
       echo "<br>";
     
