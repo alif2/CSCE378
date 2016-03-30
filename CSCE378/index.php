@@ -39,7 +39,7 @@ $s_user_clock_status = database_get_user_clock_status(1);
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-12" id="work-history">
     <h2>Work Hour(s)</h2>
     <table class="table-bordered ptable">
       <thead>
@@ -69,7 +69,7 @@ $s_user_clock_status = database_get_user_clock_status(1);
 </div>
 <div class="row">
   <div class="col-md-12">
-      <button type="submit" class="btn btn-default btnsm btnr" id="">View History</button>
+      <button type="submit" class="btn btn-default btnsm btnr" id="view-history">View History</button>
   </div>
 </div>
 
