@@ -88,3 +88,9 @@ nav a {
 #correction-form textarea {
   width: 100%;
 }
+
+.txt-active {
+  text-align: center;
+  font-size: 15px;
+  color: red;
+}
