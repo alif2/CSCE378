@@ -20,23 +20,24 @@ input {
 }
 
 nav{ /* assigning the top bar to the entire navbar div element */
-    text-align: center;
-    border: 0 !important;
-    box-shadow: inset 0px 7px 0px #FFBF00; /* initial gray color to the top bar */ 
-    background-color: #1992D4;  
+  text-align: center;
+  border: 0 !important;
+  box-shadow: inset 0px 7px 0px #FFBF00; /* initial gray color to the top bar */ 
+  background-color: #1992D4;
+  padding: 0;
 }
 .nav li.active a:hover,
 .nav li.active a:focus {
-    color: #FFFFFF;
-    background-color: #AAA;
-    box-shadow: inset 0px 6px 0px #000; /* switch to a darker color on hover */
+  color: #FFFFFF;
+  background-color: #AAA;
+  box-shadow: inset 0px 6px 0px #000; /* switch to a darker color on hover */
 }
 .nav li.active a,
 .nav li.active a:hover,
 .nav li.active a:focus {
-    color: #FFFFFF;
-    background-color: #1A74BA;
-    box-shadow: inset 0px 6px 0px #AAA; /* switch to a lighter color for active element */
+  color: #FFFFFF;
+  background-color: #1A74BA;
+  box-shadow: inset 0px 6px 0px #AAA; /* switch to a lighter color for active element */
 }
  
 /*.nav li.active a,
