@@ -1,7 +1,8 @@
 <?php
 require_once('core.php');
+if(!session_is_user_logged_in()) redirect('/login.php');
 html_top();
-$s_user_clock_status = database_get_user_clock_status(1);
+$s_user_clock_status = database_get_user_clock_status(session_get_user_email());
 ?>
 
 <div class="row">

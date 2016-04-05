@@ -1,4 +1,5 @@
 <?php
+define('ROOT_DIRECTORY', dirname(__FILE__));
 define('DIRECTORY', dirname(__FILE__) . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR);
 
 # Page shown in case of maintenance 

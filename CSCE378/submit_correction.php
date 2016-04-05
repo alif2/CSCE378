@@ -1,5 +1,6 @@
 <?php
 require_once('core.php');
+if(!session_is_user_logged_in()) redirect('/login.php');
 html_top();
 ?>
 

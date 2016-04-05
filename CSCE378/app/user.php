@@ -15,6 +15,6 @@ function add_work_hours($s_work_hours){
 
 # Get the total work hours for user for a given day
 # $s_date_utc in format YYYY-MM-DD
-function user_get_hours_by_day($i_user_id, $s_date_utc){
-    return add_work_hours(database_user_get_time_tracking_events_by_day($i_user_id, $s_date_utc));
+function user_get_hours_by_day($s_email, $s_date_utc){
+    return add_work_hours(database_user_get_time_tracking_events_by_day($s_email, $s_date_utc));
 }

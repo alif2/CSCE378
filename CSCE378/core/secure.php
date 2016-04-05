@@ -8,6 +8,15 @@ function secure_create_salt() {
     return $salt;
 }
 
-function secure_create_hash($password, $salt, $pepper) {
-    return hash(file_get_config('password_hash_method'), $salt . $pepper. $password);
+function secure_create_hash($s_password, $s_salt, $s_pepper) {
+    return hash(file_get_config('password_hash_method'), $s_salt . $s_pepper. $s_password);
+}
+
+#Compare two strings $s_string_one and $s_string_two in length-constant time.
+function secure_slow_equals($s_string_one, $s_string_two) {
+    $diff = strlen($s_string_one) ^ strlen($s_string_two);
+    for($i = 0; $i < strlen($s_string_one) && $i < strlen($s_string_two); $i++) {
+        $diff |= ord($s_string_one[$i]) ^ ord($s_string_two[$i]);
+    }
+    return $diff === 0;
 }

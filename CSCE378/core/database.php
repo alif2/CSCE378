@@ -30,12 +30,13 @@ function database_add_user($s_email, $s_salt, $s_hash) {
 
 # Get a user's password salt by email
 function database_get_salt($s_email){
-     $dbh = get_database();
+    $dbh = get_database();
 
-     $s_stmt = $dbh->prepare('SELECT PasswordSalt FROM Users WHERE Email = :s_email');
-     $s_stmt->bindParam(':s_email', $s_email);
-     $s_stmt->execute();
-     return $s_stmt->fetch();
+    $s_stmt = $dbh->prepare('SELECT PasswordSalt FROM Users WHERE Email = :s_email');
+    $s_stmt->bindParam(':s_email', $s_email);
+
+    $s_stmt->execute();
+    return $s_stmt->fetch()[0];
 }
 
 # Get a user's password hash by email
@@ -44,16 +45,27 @@ function database_get_hash($s_email) {
 
     $s_stmt = $dbh->prepare('SELECT PasswordHash FROM Users WHERE Email = :s_email');
     $s_stmt->bindParam(':s_email', $s_email);
+    
     $s_stmt->execute();
-    return $s_stmt->fetch();
+    return $s_stmt->fetch()[0];
+}
+
+function database_get_userid_by_email($s_email) {
+    $dbh = get_database();
+
+    $s_stmt = $dbh->prepare('SELECT UserID FROM Users WHERE Email = :s_email');
+    $s_stmt->bindParam(':s_email', $s_email);
+
+    $s_stmt->execute();
+    return $s_stmt->fetch()[0];
 }
 
 # Get the user's clock in / out status
 function database_get_user_clock_status($s_email) {
     $dbh = get_database();
 
-    $s_stmt = $dbh->prepare('SELECT TimeTrackingEventType FROM TimeTrackingEvents WHERE Email = :s_email ORDER BY TimeTrackingEventID DESC LIMIT 1');
-    $s_stmt->bindParam(':s_email', $s_email);
+    $s_stmt = $dbh->prepare('SELECT TimeTrackingEventType FROM TimeTrackingEvents WHERE UserID = :i_user_id ORDER BY TimeTrackingEventID DESC LIMIT 1');
+    $s_stmt->bindParam(':i_user_id', database_get_userid_by_email($s_email));
 
     $s_stmt->execute();
     return $s_stmt->fetch()[0];
@@ -63,8 +75,8 @@ function database_get_user_clock_status($s_email) {
 function database_get_user_last_event_time($s_email) {
     $dbh = get_database();
 
-    $s_stmt = $dbh->prepare('SELECT TimeUTC FROM TimeTrackingEvents WHERE Email = :s_email ORDER BY TimeTrackingEventID DESC LIMIT 1');
-    $s_stmt->bindParam(':s_email', $s_email);
+    $s_stmt = $dbh->prepare('SELECT TimeUTC FROM TimeTrackingEvents WHERE UserID = :i_user_id ORDER BY TimeTrackingEventID DESC LIMIT 1');
+    $s_stmt->bindParam(':i_user_id', database_get_userid_by_email($s_email));
 
     $s_stmt->execute();
     return $s_stmt->fetch()[0];
@@ -75,8 +87,8 @@ function database_user_get_time_tracking_events_by_day($s_email, $s_user_time) {
     $dbh = get_database();
     $s_user_time = $s_user_time . '%';
 
-    $s_stmt = $dbh->prepare('SELECT TimeUTC FROM TimeTrackingEvents WHERE Email = :s_email and TimeUTC like :s_user_time');
-    $s_stmt->bindParam(':s_email', $s_email);
+    $s_stmt = $dbh->prepare('SELECT TimeUTC FROM TimeTrackingEvents WHERE UserID = :i_user_id and TimeUTC like :s_user_time');
+    $s_stmt->bindParam(':i_user_id', database_get_userid_by_email($s_email));
     $s_stmt->bindParam(':s_user_time',$s_user_time);
 
     $s_stmt->execute();
@@ -87,9 +99,9 @@ function database_user_get_time_tracking_events_by_day($s_email, $s_user_time) {
 function database_user_create_time_tracking_event($s_event_type, $s_email, $dt_clock_time_utc) {
     $dbh = get_database();
 
-    $s_stmt = $dbh->prepare('INSERT INTO TimeTrackingEvents(TimeTrackingEventType, UserID, TimeUTC) VALUES (:s_time_tracking_event_type, :s_email, :dt_time_utc)');
+    $s_stmt = $dbh->prepare('INSERT INTO TimeTrackingEvents(TimeTrackingEventType, UserID, TimeUTC) VALUES (:s_time_tracking_event_type, :i_user_id, :dt_time_utc)');
     $s_stmt->bindParam(':s_time_tracking_event_type', $s_event_type);
-    $s_stmt->bindParam(':s_email', $s_email);
+    $s_stmt->bindParam(':i_user_id', database_get_userid_by_email($s_email));
     $s_stmt->bindParam(':dt_time_utc', $dt_clock_time_utc);
 
     return $s_stmt->execute();

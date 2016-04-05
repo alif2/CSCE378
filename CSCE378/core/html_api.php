@@ -45,6 +45,12 @@ function html_container_start() {
 }
 
 function html_nav() {
+    if(session_is_user_logged_in()) {
+        $s_hello_msg = '<ul class="nav navbar-nav navbar-right"><li><a href="">Hello, '. session_get_user_email() . '</a></li></ul>';
+    } else {
+        $s_hello_msg = '';
+    }
+    
     echo '<nav class="navbar">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -54,11 +60,9 @@ function html_nav() {
         <li class="active"><a href="/">Home</a></li>
         <li><a href="/submit_correction.php">Correction Form</a></li>
         <li><a href="/pay_calculator.php">Pay Calculator</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="">Hello, Username</a></li>
-      </ul>
-    </div>
+      </ul>'
+    . $s_hello_msg .
+    '</div>
   </nav>';
 }
 
