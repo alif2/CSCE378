@@ -82,19 +82,18 @@ function database_get_user_last_event_time($s_email) {
     return $s_stmt->fetch()[0];
 }
 
-<<<<<<< Updated upstream
-# Get a list of all clock in / out events for user for given day
-function database_user_get_time_tracking_events_by_day($s_email, $s_user_time) {
-=======
-function database_user_get_time_tracking_events_by_day($i_user_id, $s_start_date, $s_end_date) { //2016-03-28
->>>>>>> Stashed changes
-    $dbh = get_database();
 
-<<<<<<< Updated upstream
+# Get a list of all clock in / out events for user for given day
+
+function database_user_get_time_tracking_events_by_day($s_email, $s_start_date, $s_end_date) { //2016-03-28
+
+    $dbh = get_database();
+    $i_user_id = database_get_userid_by_email($s_email);
+
     $s_stmt = $dbh->prepare('SELECT TimeUTC FROM TimeTrackingEvents WHERE UserID = :i_user_id and TimeUTC like :s_user_time');
-    $s_stmt->bindParam(':i_user_id', database_get_userid_by_email($s_email));
+    $s_stmt->bindParam(':i_user_id', $i_user_id);
     $s_stmt->bindParam(':s_user_time',$s_user_time);
-=======
+
     if($s_start_date != $s_end_date){
 
     $s_end_date = date('Y-m-d', strtotime($s_end_date . '+1 day'));
@@ -115,9 +114,7 @@ function database_user_get_time_tracking_events_by_day($i_user_id, $s_start_date
     $s_stmt->bindParam(':s_start_date',$s_start_date);
     } 
 
-    
 
->>>>>>> Stashed changes
 
     $s_stmt->execute();
     return $s_stmt->fetchall();
@@ -134,3 +131,5 @@ function database_user_create_time_tracking_event($s_event_type, $s_email, $dt_c
 
     return $s_stmt->execute();
 }
+
+
