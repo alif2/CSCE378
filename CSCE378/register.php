@@ -3,6 +3,7 @@ require_once('core.php');
 html_top();
 ?>
 
+<h3>Fixed Navbar</h3>
 <form role="form" action="app/register_user.php" method="post">
     <div class="form-group">
         <label for="email">Email:</label>

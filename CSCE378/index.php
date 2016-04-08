@@ -5,6 +5,7 @@ html_top();
 $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
 ?>
 
+<h3>Fixed Navbar</h3>
 <div class="row">
   <div class="col-md-4">
     <form class="clock-form" role="form" method="POST">

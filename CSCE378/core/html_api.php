@@ -51,7 +51,7 @@ function html_nav() {
         $s_hello_msg = '';
     }
     
-    echo '<nav class="navbar">
+    echo '<nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">Time Tracker</a>
