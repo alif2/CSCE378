@@ -56,7 +56,6 @@ function user_get_hours_by_week($s_email, $s_start_date, $s_end_date){
 
     else{
 	array_push($s_user_hours_dates,$s_user_UTC_week[$i][0]);
-    
     }
     
 
@@ -66,8 +65,6 @@ function user_get_hours_by_week($s_email, $s_start_date, $s_end_date){
 
     return $s_uesr_work_hours_array;
    }
-   print_r(user_get_hours_by_week('fdsfa','2016-03-10','2016-04-06'));
-/*
-   if(strpos('abc' , 'h' ) === false)
-   	echo 'aaaaa';
-   	*/
+
+   print_r(user_get_hours_by_week('fdsfa','2016-03-10','2016-03-25'));
+

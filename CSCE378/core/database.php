@@ -89,6 +89,7 @@ function database_user_get_time_tracking_events_by_day($s_email, $s_start_date, 
 
     $dbh = get_database();
     $i_user_id = database_get_userid_by_email($s_email);
+    
 
     $s_stmt = $dbh->prepare('SELECT TimeUTC FROM TimeTrackingEvents WHERE UserID = :i_user_id and TimeUTC like :s_user_time');
     $s_stmt->bindParam(':i_user_id', $i_user_id);
