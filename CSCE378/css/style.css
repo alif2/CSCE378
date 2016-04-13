@@ -62,21 +62,21 @@ nav a {
 }
 
 .btn-default {
-  background-color: #1992D4;
+  background-color: #696969;
   color: #FFFFFF;
-  border-color: #1992D4;
+  border-color: #080808;
 }
 
 .btn-default:focus {
-  color: #1A74BA;
+  color: #000000;
   background-color: #e6e6e6;
   border-color: #8c8c8c;
 }
 
 .btn-default:hover {
   color: #FFFFFF;
-  background-color: #1A74BA;
-  border-color: #1A74BA;
+  background-color: #333;
+  border-color: #080808;
 }
 
 .btnlg {
@@ -85,7 +85,7 @@ nav a {
 }
 
 .ptable {
-  background-color: white;
+  background-color: #FFFFFF;
 	width: 940px;
 	height: 100px;
 }

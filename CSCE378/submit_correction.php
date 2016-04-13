@@ -4,6 +4,7 @@ if(!session_is_user_logged_in()) redirect('/login.php');
 html_top();
 ?>
 
+<h3>Fixed Navbar</h3>
 <div class="row">
   <div class="col-md-12">
     <h1>Correction Form</h1>
