@@ -4,32 +4,50 @@ html_top();
 ?>
 
 <h3>Fixed Navbar</h3>
-<form role="form" action="app/user_login.php" method="POST">
-  <div class="row">
-    <div class="col-md-12">
-      <p>Need an account? <a href="/register.php">Register now!</a></p>
-    </div>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <p>Email:</p>
+<div class="row">
+  <form role="form" class="form-horizontal" action="app/user_login.php" method="POST">
+    <div class="col-md-6">
+      <h3>Login</h3>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="login-email">Email:</label>
+        <div class="col-md-8">
+          <input type="email" class="form-control" id="login-email" name="login-email">
+        </div>
       </div>
-      <div class="col-md-4">
-        <input type="text" name="email">
+      <div class="form-group">
+        <label class="control-label col-md-2" for="login-password">Password:</label>
+        <div class="col-md-8">
+          <input type="password" class="form-control" id="login-password" name="login-password">
+        </div>
       </div>
-    </div>
-    <div class="col-md-12">
-      <div class="col-md-2">
-        <p>Password:</p>
-      </div>
-      <div class="col-md-4">
-        <input type="password" name="password">
-      </div>
-    </div>
-    <div class="col-md-12">
-      <div class="col-md-2"></div>
-      <div class="col-md-1">
-        <button type="submit" class="btn btn-default">Submit</button>
+      <div class="form-group">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <button type="submit" class="btn btn-default">Login</button>
+        </div>
       </div>
     </div>
-  </div>
-</form>
+  </form>
+  <form role="form" class="form-horizontal" action="app/register_user.php" method="post">
+    <div class="col-md-6">
+      <h3>Register</h3>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="register-email">Email:</label>
+        <div class="col-md-8">
+          <input type="text" class="form-control" id="register-email" name="register-email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="register-password">Password:</label>
+        <div class="col-md-8">
+          <input type="password" class="form-control" id="register-password" name="register-password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+      </div>
+  </form>
+</div>
