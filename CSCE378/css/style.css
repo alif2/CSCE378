@@ -26,39 +26,12 @@ nav{ /* assigning the top bar to the entire navbar div element */
   background-color: #1992D4;
   padding: 0;
 }
-.nav li.active a:hover,
-.nav li.active a:focus {
-  color: #FFFFFF;
-  background-color: #AAA;
-  box-shadow: inset 0px 6px 0px #000; /* switch to a darker color on hover */
-}
+
 .nav li.active a,
 .nav li.active a:hover,
 .nav li.active a:focus {
   color: #FFFFFF;
-  background-color: #1A74BA;
-  box-shadow: inset 0px 6px 0px #AAA; /* switch to a lighter color for active element */
-}
- 
-/*.nav li.active a,
-.nav li.active a:hover{
-color: white;
-background-color: gray;
-border-top: 6px solid darkgray;
-}*/
-
-/*.nav li.active a:hover {
-  background-color: #1A74BA;
-  color: #FFFFFF;
-}*/
-
-nav a {
-  color: #FFFFFF;
-}
-
-.nav li > a:hover {
-  background-color: #1992D4;
-  border-color: #FFFFFF;
+  box-shadow: inset 0px 6px 0px #AAAAAA; /* switch to a lighter color for active element */
 }
 
 .btn-default {
@@ -74,8 +47,8 @@ nav a {
 }
 
 .btn-default:hover {
-  color: #FFFFFF;
-  background-color: #333;
+  color: #FFBF00;
+  background-color: #000000;
   border-color: #080808;
 }
 
