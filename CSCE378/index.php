@@ -57,13 +57,13 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
       </thead>
       <tbody>
         <tr>
-          <td>5.2</td>
-          <td>4.3</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td contenteditable="true">5.2</td>
+          <td contenteditable="true">4.3</td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
+          <td contenteditable="true"></td>
           </tr>
       </tbody>
     </table>
