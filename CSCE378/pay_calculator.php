@@ -51,7 +51,7 @@ html_top();
 </div>
 <div class="row">
   <div class="col-md-6">
-    <h2>Total Pay = $<span class="total-pay"></span></h2>
+    <h2>Total Pay = $&nbsp<span class="total-pay"></span></h2>
   </div>
 </div>
 
