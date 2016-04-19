@@ -118,4 +118,22 @@ function database_user_create_time_tracking_event($s_event_type, $s_email, $dt_c
     $s_stmt->bindParam(':dt_time_utc', $dt_clock_time_utc);
 
     return $s_stmt->execute();
+#<<<<<<< HEAD
 }
+
+function database_uesr_check_eventType($s_email,$s_UTC_time){
+    $dbh = get_database();
+    $i_user_id = database_get_userid_by_email($s_email);
+    $s_date = date('Y-m-d', strtotime($s_UTC_time. '-2 hours'));
+    $s_date = $s_date . '%';
+    #print_r($s_date);
+    $s_stmt = $dbh->prepare('SELECT TimeTrackingEventType FROM TimeTrackingEvents WHERE UserID = :i_user_id and TimeUTC like :s_user_time');
+    $s_stmt->bindParam(':i_user_id', $i_user_id);
+    $s_stmt->bindParam(':s_user_time',$s_date);
+    $s_stmt->execute();
+    return $s_stmt->fetchall();
+
+}
+#=======
+#}
+#>>>>>>> origin/dev
