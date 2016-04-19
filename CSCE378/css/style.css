@@ -21,12 +21,8 @@ nav{ /* assigning the top bar to the entire navbar div element */
   padding: 0;
 }
 
-.navbar-inverse .navbar-brand { /*Nav title*/
-    color: #9d9d9d;
-}
-
-.nav li.active a:hover { /*Nav title*/
-    color: #FFBF00;
+.navbar-inverse .navbar-brand{  /*Nav title*/
+    color: #FFFFFF;
 }
 
 .navbar-inverse .navbar-nav>.active>a,
