@@ -7,26 +7,23 @@ function add_work_hours($s_work_hours){
     $i_sum = 0;
 
     for($i = 0; $i < count($s_work_hours) - 1; $i += 2) {
+#<<<<<<< HEAD
     $i_sum += strtotime($s_work_hours[$i + 1]) - strtotime($s_work_hours[$i]);
     } 
     
     return $i_sum /= 3600.0;
 
+
 }
 
-# Get the total work hours for user for a given day
+# Get the total work hours for user for given date range
 # $s_date_utc in format YYYY-MM-DD
-function user_get_hours_by_day($s_email, $s_date_utc){
-    return add_work_hours(database_user_get_time_tracking_events_by_day($s_email, $s_date_utc));
-}
-
-
-
-function user_get_hours_by_week($s_email, $s_start_date, $s_end_date){
+function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
 	$s_user_hours_dates = array();
+
 	$s_uesr_work_hours_array = array();
     $s_uesr_temp_array = array();
-    $s_user_UTC_week = database_user_get_time_tracking_events_by_day($s_email,$s_start_date, $s_end_date);
+    $s_user_UTC_week = database_user_get_time_tracking_events_by_date_range($s_email,$s_start_date, $s_end_date);
   
     $s_date = date('Y-m-d', strtotime($s_user_UTC_week[0][0]. '-2 hours'));
     
@@ -74,9 +71,7 @@ function user_get_hours_by_week($s_email, $s_start_date, $s_end_date){
     return $s_uesr_work_hours_array;
    }
 
-   #print_r(user_get_hours_by_week('fdsfa','2016-03-01','2016-04-08'));
-
-
+   print_r(user_get_hours_by_date_range('fdsfa','2016-03-01','2016-04-08'));
 
 
 

@@ -1,5 +1,5 @@
 body {
-  background-color: #F8F8F8;
+  background-color: #F1F1F1;
 }
 
 input, textarea {
@@ -14,69 +14,59 @@ input {
   width: 170px;
 }
 
-.active {   /*Focus Nav Color*/
-  background-color: #1A74BA;
-  
-}
-
 nav{ /* assigning the top bar to the entire navbar div element */
   text-align: center;
   border: 0 !important;
   box-shadow: inset 0px 7px 0px #FFBF00; /* initial gray color to the top bar */ 
-  background-color: #1992D4;
   padding: 0;
 }
-.nav li.active a:hover,
-.nav li.active a:focus {
-  color: #FFFFFF;
-  background-color: #AAA;
-  box-shadow: inset 0px 6px 0px #000; /* switch to a darker color on hover */
+
+.navbar-inverse .navbar-brand { /*Nav title*/
+    color: #9d9d9d;
 }
+
+.nav li.active a:hover { /*Nav title*/
+    color: #FFBF00;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover { /*The active menu*/
+    color: #FFBF00;
+    background-color: #080808;
+}
+
+.navbar-inverse .navbar-nav>li>a {  /*Nav main txt*/
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #FFBF00;
+}
+
 .nav li.active a,
 .nav li.active a:hover,
 .nav li.active a:focus {
   color: #FFFFFF;
-  background-color: #1A74BA;
-  box-shadow: inset 0px 6px 0px #AAA; /* switch to a lighter color for active element */
-}
- 
-/*.nav li.active a,
-.nav li.active a:hover{
-color: white;
-background-color: gray;
-border-top: 6px solid darkgray;
-}*/
-
-/*.nav li.active a:hover {
-  background-color: #1A74BA;
-  color: #FFFFFF;
-}*/
-
-nav a {
-  color: #FFFFFF;
-}
-
-.nav li > a:hover {
-  background-color: #1992D4;
-  border-color: #FFFFFF;
+  box-shadow: inset 0px 6px 0px #333333; /* switch to a lighter color for active element */
 }
 
 .btn-default {
-  background-color: #696969;
+  background-color: #333333;
   color: #FFFFFF;
-  border-color: #080808;
+  border-color: #333333;
 }
 
 .btn-default:focus {
-  color: #000000;
-  background-color: #e6e6e6;
-  border-color: #8c8c8c;
+  color: #FFBF00;
+  background-color: #000000;
+  border-color: #333333;
 }
 
 .btn-default:hover {
-  color: #FFFFFF;
-  background-color: #333;
-  border-color: #080808;
+  color: #FFBF00;
+  background-color: #333333;
+  border-color: #3333333;
 }
 
 .btnlg {
