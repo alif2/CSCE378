@@ -1,8 +1,8 @@
 <?php
 require_once('core.php');
 
-$s_email = $_POST['email'];
-$s_password = $_POST['password'];
+$s_email = $_POST['login-email'];
+$s_password = $_POST['login-password'];
 
 $s_salt = database_get_salt($s_email);
 $s_pepper = file_read_pepper();
