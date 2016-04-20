@@ -112,11 +112,11 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
       <div class="col-md-2">
         <button type="submit" class="btn btn-default btnsm btnl">Submit</button>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-1">
         <button type="reset" class="btn btn-default btnsm btnl" id="clear">Clear</button>
       </div>
       <div class="col-md-6 submit-success" hidden>
-        <p class="txt-active">Submitted successfully!</p>
+        <pre class="txt-active">Submitted successfully!</pre>
       </div>
     </div>
   </div>
