@@ -72,8 +72,12 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
   </div>
 </div>
 <div class="row">
+	<br>
   <div class="col-md-12">
-      <button type="submit" class="btn btn-default btnsm btnr" id="view-history">View History</button>
+  	<div class="col-md-6"></div>
+  	<div class="col-md-4">
+      <button type="submit" class="btn btn-default btnmid btnr" id="view-history">View History</button>
+    </div>
   </div>
 </div>
 
