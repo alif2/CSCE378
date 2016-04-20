@@ -9,7 +9,7 @@ function add_work_hours($s_work_hours,$s_email){
     $i_sum = 0;
     $i = 0;
     $s_date = date('Y-m-d', strtotime($s_work_hours[0]. '-2 hours'));
-    $s_event_type = database_uesr_check_eventType($s_email,$s_work_hours[0]);
+    $s_event_type = database_user_check_event_type($s_email,$s_work_hours[0]);
     if($s_event_type == 'ClockOut'){
         $i_sum += strtotime($s_work_hours[0]) - strtotime($s_date. '+2 hours');
         $i++;
@@ -20,20 +20,20 @@ function add_work_hours($s_work_hours,$s_email){
         $i_sum += strtotime($s_work_hours[$i + 1]) - strtotime($s_work_hours[$i]);
     } 
 
-    $s_event_type = database_uesr_check_eventType($s_email,$s_work_hours[count($s_work_hours) - 1]);
+    $s_event_type = database_user_check_event_type($s_email,$s_work_hours[count($s_work_hours) - 1]);
     if($s_event_type == 'ClockIn'){
         $i_sum += strtotime($s_date.'+1 day'.'+2 hour') - strtotime($s_work_hours[count($s_work_hours)-1]);
     }
     return $i_sum /= 3600.0;
-    
-
 }
+
 
 
 # Get the total work hours for user for given date range
 # $s_date_utc in format YYYY-MM-DD
 function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
 	$s_user_hours_dates = array();
+
     $s_uesr_work_hours_array = array();
     $s_uesr_temp_array = array();
     $s_user_UTC_week = database_user_get_time_tracking_events_by_date_range($s_email,$s_start_date, $s_end_date);
@@ -59,7 +59,7 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
             unset($s_user_hours_dates);
             $s_user_hours_dates = array();
 
-            $event_type = database_uesr_check_eventType($s_email,$s_user_UTC_week[$i][0]);
+            $event_type = database_user_check_event_type($s_email,$s_user_UTC_week[$i][0]);
          
             $i--;
             
@@ -80,13 +80,6 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
 } 
    #print_r((strtotime('2016-03-10T23:48:19.119Z') - strtotime('2016-03-10'.'+1 hour'))/3600);
     # print_r((strtotime('2016-03-10'.'+1 day'.'+1 hour') - strtotime('2016-03-10T23:48:19.119Z') )/3600);
-  $s_event_type = database_uesr_check_eventType('fdsfa','2016-04-07T01:52:19.594Z');
+    #$s_event_type = database_uesr_check_eventType('fdsfa','2016-04-07T01:52:19.594Z');
 #print_r($s_event_type);
-  
-
-   print_r(user_get_hours_by_date_range('fdsfa','2015-09-01','2016-04-08'));
-
-
-
-
-
+     print_r(user_get_hours_by_date_range('fdsfa','2015-09-01','2017-04-08'));
