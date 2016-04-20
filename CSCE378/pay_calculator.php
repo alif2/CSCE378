@@ -39,7 +39,7 @@ html_top();
     <div class="col-md-12">
       <div class="col-md-2"></div>
       <div class="col-md-1">
-        <button type="submit" class="btn btn-default btnsm">Calculate</button>
+        <button type="submit" class="btn btn-default btnmid">Calculate</button>
       </div>
     </div>
   </div>

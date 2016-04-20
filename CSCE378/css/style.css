@@ -89,10 +89,18 @@ nav{ /* assigning the top bar to the entire navbar div element */
   float: left;
 }
 
+.btnmid {
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 6px 18px;
+  width: 120px;
+}
+
 .btnsm {
   font-size: 14px;
   border-radius: 20px;
-  padding: 6px 14px;
+  padding: 6px 18px;
+  width: 90px;
 }
 
 #correction-form textarea {
@@ -101,6 +109,19 @@ nav{ /* assigning the top bar to the entire navbar div element */
 
 .txt-active {
   text-align: center;
-  font-size: 15px;
-  color: red;
+  font-size: 14px;
+  color: #FFA400;
+}
+
+pre {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    display: block;
+    padding: 9.5px;
+    margin: -4px 0 0;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
 }

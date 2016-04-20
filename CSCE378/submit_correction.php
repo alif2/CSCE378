@@ -45,7 +45,7 @@ html_top();
         <button type="reset" class="btn btn-default btnsm btnl" id="clear">Clear</button>
       </div>
       <div class="col-md-2 submit-success" hidden>
-        <p class="txt-active">Submitted successfully!</p>
+        <pre class="txt-active">Submitted successfully!</pre>
       </div>
     </div>
   </div>
