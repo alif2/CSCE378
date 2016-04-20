@@ -37,7 +37,10 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
     $s_uesr_work_hours_array = array();
     $s_uesr_temp_array = array();
     $s_user_UTC_week = database_user_get_time_tracking_events_by_date_range($s_email,$s_start_date, $s_end_date);
-  
+    if($s_user_UTC_week == NULL){
+        $emety = array();
+        return $emety;
+    }
     $s_date = date('Y-m-d', strtotime($s_user_UTC_week[0][0]. '-2 hours'));
     
     for($i = 0; $i < count($s_user_UTC_week); $i++){
@@ -78,8 +81,5 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
     $s_uesr_work_hours_array = $s_uesr_work_hours_array + $s_uesr_temp_array;
     return $s_uesr_work_hours_array;
 } 
-   #print_r((strtotime('2016-03-10T23:48:19.119Z') - strtotime('2016-03-10'.'+1 hour'))/3600);
-    # print_r((strtotime('2016-03-10'.'+1 day'.'+1 hour') - strtotime('2016-03-10T23:48:19.119Z') )/3600);
-    #$s_event_type = database_uesr_check_eventType('fdsfa','2016-04-07T01:52:19.594Z');
-#print_r($s_event_type);
-     print_r(user_get_hours_by_date_range('fdsfa','2015-09-01','2017-04-08'));
+
+     print_r(user_get_hours_by_date_range('fdsfa','2013-09-01','2014-04-08'));
