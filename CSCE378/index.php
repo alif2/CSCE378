@@ -8,7 +8,7 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
 <h3>Fixed Navbar</h3>
 <div class="row">
   <div class="col-md-4">
-    <form class="clock-form" role="form" method="POST">
+    <form class="clock-form" role="form" action="/index.php" method="POST">
     <?php if($s_user_clock_status == 'ClockIn') { ?>
         <button type="submit" class="btn btn-default btnlg" id="clock-out">CLOCK OUT</button>
     <?php } else { ?>
@@ -40,6 +40,8 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
     <?php } ?>
   </div>
 </div>
+<button class="" id="correction-form-btn">Correction Form</button>
+<button class="" id="pay-calculator-btn">Pay Calculator</button>
 <div class="row">
   <div class="col-md-12" id="work-history">
     <h2>Work Hour(s)</h2>
@@ -78,6 +80,79 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
     </div>
   </div>
 </div>
+
+<form role="form" id="correction-form" title="Correction Form">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <p>*Date:</p>
+      </div>
+      <div class="col-md-4">
+        <input type="date" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <p>*Duration:</p>
+      </div>
+      <div class="col-md-4">
+        <input type="number" step="0.01" min="0" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2">
+        <p>&nbsp;Comments:</p>
+      </div>
+      <div class="col-md-7">
+        <textarea rows="7"></textarea>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-2"></div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-default btnsm btnl">Submit</button>
+      </div>
+      <div class="col-md-2">
+        <button type="reset" class="btn btn-default btnsm btnl" id="clear">Clear</button>
+      </div>
+      <div class="col-md-6 submit-success" hidden>
+        <p class="txt-active">Submitted successfully!</p>
+      </div>
+    </div>
+  </div>
+</form>
+
+<form role="form" id="pay-calculator" title="Pay Calculator">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <p>*Start Date:</p>
+      </div>
+      <div class="col-md-6">
+        <input type="date" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <p>*End Date:</p>
+      </div>
+      <div class="col-md-6">
+        <input type="date" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <p>*Wage:</p>
+      </div>
+      <div class="col-md-6">
+        <input type="number" step="0.01" min="0" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h3>Total Pay = $<span class="total-pay"></span></h3>
+    </div>
+  </div>
+</form>
 
 <?php
 html_bottom();
