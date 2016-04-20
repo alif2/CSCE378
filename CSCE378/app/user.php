@@ -82,4 +82,4 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
     return $s_uesr_work_hours_array;
 } 
 
-     print_r(user_get_hours_by_date_range('fdsfa','2013-09-01','2014-04-08'));
+     print_r(user_get_hours_by_date_range('fdsfa','2013-09-01','2017-04-08'));
