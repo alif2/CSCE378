@@ -1,8 +1,13 @@
 <?php
 require_once('core.php');
+require_once('app/user.php');
 if(!session_is_user_logged_in()) redirect('/login.php');
 html_top();
 $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
+
+$start_date =  date('Y-m-d', strtotime('-' . date('w') . ' days'));
+$end_date = date('Y-m-d', strtotime($start_date . '+6 days'));
+$work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date, $end_date);
 ?>
 
 <h3>Fixed Navbar</h3>
@@ -47,25 +52,28 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
     <h2>Work Hour(s)</h2>
     <table class="table-bordered ptable">
       <thead>
-        <tr>
-          <th>Monday Feb.2</th>
-          <th>Tuesday Feb.3</th>
-          <th>Wednesday Feb.4</th>
-          <th>Thursday Feb.5</th>
-          <th>Friday Feb.6</th>
-          <th>Saturday Feb.7</th>
-          <th>Sunday Feb.8</th>
+        <tr id="work-history-week">
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td contenteditable="true">5.2</td>
-          <td contenteditable="true">4.3</td>
-          <td contenteditable="true"></td>
-          <td contenteditable="true"></td>
-          <td contenteditable="true"></td>
-          <td contenteditable="true"></td>
-          <td contenteditable="true"></td>
+        <?php
+        $current_date = $start_date;
+        for($i = 0; $i < 7; $i++) {
+            echo '<td>';
+            if(isset($work_hours[$current_date])) {
+                echo round($work_hours[$current_date], 2);
+            }
+            echo '</td>';
+            $current_date = date('Y-m-d', strtotime($current_date . '+1 day'));
+        } ?>
           </tr>
       </tbody>
     </table>

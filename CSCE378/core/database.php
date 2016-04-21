@@ -125,8 +125,6 @@ function database_user_check_event_type($s_email,$s_UTC_time){
     $dbh = get_database();
     $i_user_id = database_get_userid_by_email($s_email);
 
-
-
     $s_stmt = $dbh->prepare('SELECT TimeTrackingEventType FROM TimeTrackingEvents WHERE UserID = :i_user_id and TimeUTC like :s_user_time');
     $s_stmt->bindParam(':i_user_id', $i_user_id);
     $s_stmt->bindParam(':s_user_time',$s_UTC_time);

@@ -4,6 +4,15 @@ $(document).ready(function() {
     getClockInTime();
     getTime();
    
+    var now = new Date();
+    var first = now.getDate() - now.getDay();
+    var firstDayOfWeek = new Date(now.setDate(first));
+   
+    $('#work-history-week').children().each(function() {
+        $(this).text(firstDayOfWeek.toLocaleDateString());
+        firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
+    });
+   
     $('.clock-form').submit(function(event) {
        var now = new Date();
        $.ajax({
@@ -54,7 +63,7 @@ $(document).ready(function() {
     });
     
     $('#correction-form-btn').button().click(function() {
-      correctionForm.dialog('open');  
+        correctionForm.dialog('open');  
     });
     
     payCalculator = $('#pay-calculator').dialog({
