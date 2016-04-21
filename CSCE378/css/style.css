@@ -113,6 +113,14 @@ nav{ /* assigning the top bar to the entire navbar div element */
   color: #FFA400;
 }
 
+.verticalLine {
+  border-left: thick solid #ff0000;
+}
+
+h5 {
+  margin: 0 -10px 0;
+}
+
 pre {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     display: block;

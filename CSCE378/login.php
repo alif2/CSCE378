@@ -5,8 +5,8 @@ html_top();
 
 <h3>Fixed Navbar</h3>
 <div class="row">
-  <form role="form" class="form-horizontal" action="app/user_login.php" method="POST">
-    <div class="col-md-6">
+  <div class="col-md-5">
+    <form role="form" class="form-horizontal" action="app/user_login.php" method="POST">
       <h3>Login</h3>
       <div class="form-group">
         <label class="control-label col-md-2" for="login-email">Email:</label>
@@ -26,10 +26,15 @@ html_top();
           <button type="submit" class="btn btn-default">Login</button>
         </div>
       </div>
-    </div>
-  </form>
-  <form role="form" class="form-horizontal" action="app/register_user.php" method="post">
-    <div class="col-md-6">
+    </form>
+  </div>
+  <div class="col-md-1">
+    <div class="row-md-6" style="border-left:1px solid #000;height:70px"></div>
+    <br><div class="row-md-6" style="margin=-1px"><h5>OR</h5></div><br>
+    <div class="row-md-6" style="border-left:1px solid #000;height:70px"></div>
+  </div>
+  <div class="col-md-6">
+    <form role="form" class="form-horizontal" action="app/register_user.php" method="post">
       <h3>Register</h3>
       <div class="form-group">
         <label class="control-label col-md-2" for="register-email">Email:</label>
@@ -48,6 +53,6 @@ html_top();
         <div class="col-md-8">
           <button type="submit" class="btn btn-default">Submit</button>
         </div>
-      </div>
-  </form>
+    </form>
+  </div>
 </div>
