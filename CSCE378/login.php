@@ -51,7 +51,7 @@ html_top();
       <div class="form-group">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Register</button>
         </div>
     </form>
   </div>
