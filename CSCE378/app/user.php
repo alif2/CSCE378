@@ -34,8 +34,8 @@ function add_work_hours($s_work_hours,$s_email){
 function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
 	$s_user_hours_dates = array();
 
-    $s_uesr_work_hours_array = array();
-    $s_uesr_temp_array = array();
+    $s_user_work_hours_array = array();
+    $s_user_temp_array = array();
     $s_user_UTC_week = database_user_get_time_tracking_events_by_date_range($s_email,$s_start_date, $s_end_date);
     if($s_user_UTC_week == NULL){
         $emety = array();
@@ -49,13 +49,13 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
         if(strpos($s_user_UTC_week[$i][0],$s_date ) === false){
     
         
-            $s_uesr_temp_array[$s_date] = add_work_hours($s_user_hours_dates,$s_email);
-            $s_uesr_work_hours_array = $s_uesr_work_hours_array + $s_uesr_temp_array;
+            $s_user_temp_array[$s_date] = add_work_hours($s_user_hours_dates,$s_email);
+            $s_user_work_hours_array = $s_user_work_hours_array + $s_user_temp_array;
             $s_date = date('Y-m-d', strtotime($s_date. '+1 day'));
  
             
             while(strpos($s_user_UTC_week[$i][0],$s_date) === false){
-            #check if the next in the 
+            #check if the next day in the database`
             $s_date = date('Y-m-d', strtotime($s_date. '+1 day'));
             }
 
@@ -77,9 +77,9 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
     }
 
 
-    $s_uesr_temp_array[$s_date] = add_work_hours($s_user_hours_dates,$s_email);
-    $s_uesr_work_hours_array = $s_uesr_work_hours_array + $s_uesr_temp_array;
-    return $s_uesr_work_hours_array;
+    $s_user_temp_array[$s_date] = add_work_hours($s_user_hours_dates,$s_email);
+    $s_user_work_hours_array = $s_user_work_hours_array + $s_user_temp_array;
+    return $s_user_work_hours_array;
 } 
 
-     print_r(user_get_hours_by_date_range('fdsfa','2013-09-01','2017-04-08'));
+     print_r(user_get_hours_by_date_range('fdsfa','2013-09-01','2016-04-01'));
