@@ -10,7 +10,7 @@ $end_date = date('Y-m-d', strtotime($start_date . '+6 days'));
 $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date, $end_date);
 ?>
 
-<h3>Fixed Navbar</h3>
+<h4>Fixed Navbar</h4>
 <div class="row">
   <div class="col-md-4">
     <form class="clock-form" role="form" action="/index.php" method="POST">
