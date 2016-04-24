@@ -85,5 +85,5 @@ function user_get_hours_by_date_range($s_email, $s_start_date, $s_end_date){
     return $s_user_work_hours_array;
 } 
 
-     
+     print_r(user_get_hours_by_date_range('fdsfa','2013-09-01','2016-04-07'));
 
