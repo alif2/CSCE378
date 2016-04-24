@@ -24,7 +24,7 @@ function html_meta() {
 function html_css() {
     echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">';
     echo '<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">';
-    echo '<link rel="stylesheet" href="css\style.css">';
+    echo '<link rel="stylesheet" href="css/style.css">';
 }
 
 function html_title() {

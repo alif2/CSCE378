@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    //$.fn.bootstrapBtn = $.fn.button.noConflict();
+    $.fn.bootstrapBtn = $.fn.button.noConflict();
     
     getClockInTime();
     getTime();
