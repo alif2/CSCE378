@@ -125,3 +125,13 @@ pre {
     border: none;
     border-radius: 4px;
 }
+
+#work-history-submit-modal table {
+  width: 100%;
+}
+
+#work-history-submit-modal tr,
+#work-history-submit-modal td,
+#work-history-submit-modal th {
+  border: 1px solid black;
+}

@@ -11,13 +11,13 @@ html_top();
       <div class="form-group">
         <label class="control-label col-md-2" for="login-email">Email:</label>
         <div class="col-md-8">
-          <input type="email" class="form-control" id="login-email" name="login-email">
+          <input type="email" class="form-control" id="login-email" name="login-email" required>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-md-2" for="login-password">Password:</label>
         <div class="col-md-8">
-          <input type="password" class="form-control" id="login-password" name="login-password">
+          <input type="password" class="form-control" id="login-password" name="login-password" required>
         </div>
       </div>
       <div class="form-group">
@@ -34,13 +34,13 @@ html_top();
       <div class="form-group">
         <label class="control-label col-md-2" for="register-email">Email:</label>
         <div class="col-md-8">
-          <input type="text" class="form-control" id="register-email" name="register-email">
+          <input type="email" class="form-control" id="register-email" name="register-email" required>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-md-2" for="register-password">Password:</label>
         <div class="col-md-8">
-          <input type="password" class="form-control" id="register-password" name="register-password">
+          <input type="password" class="form-control" id="register-password" name="register-password" required>
         </div>
       </div>
       <div class="form-group">

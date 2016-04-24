@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $.fn.bootstrapBtn = $.fn.button.noConflict();
+    //$.fn.bootstrapBtn = $.fn.button.noConflict();
     
     getClockInTime();
     getTime();
@@ -7,11 +7,10 @@ $(document).ready(function() {
     var now = new Date();
     var first = now.getDate() - now.getDay();
     var firstDayOfWeek = new Date(now.setDate(first));
-   
-    $('#work-history-week').children().each(function() {
-        $(this).text(firstDayOfWeek.toLocaleDateString());
-        firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 1);
-    });
+    firstDayOfWeek.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+
+    var firstDayOfWeekIso = firstDayOfWeek.toISOString().slice(0, 10);
+    var lastDayOfWeekIso = new Date(firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 6)).toISOString().slice(0, 10);
    
     $('.clock-form').submit(function(event) {
        var now = new Date();
@@ -29,7 +28,13 @@ $(document).ready(function() {
    
    $('#pay-calculator').submit(function(event) {
         event.preventDefault();
-        $('.total-pay').text('1234.56');
+        var q = sumWorkHoursByDateRange($('#pay-start').val(), $('#pay-end').val());
+        var wage = parseFloat($('#pay-wage').val());
+        q.success(function(data) {
+            var hours = parseFloat(data);
+            var hourTotal = hours * wage;
+            $('.total-pay').text(Math.round(hourTotal * 100) / 100);
+        });
    });
    
     $('#correction-form').submit(function(event) {        
@@ -37,14 +42,36 @@ $(document).ready(function() {
         $('.submit-success').show();
     });
    
-    $('#correction-form #clear').click(function() {
-       $('.submit-success').hide(); 
+    $('#work-history-modal').submit(function(event) {
+        event.preventDefault();
+        var workHistoryPromise = getWorkHistoryByDateRange($('#history-start-date').val(), $('#history-end-date').val());
+        workHistoryPromise.success(function(data) {
+            $('#work-history-body').empty();
+            $.each(data, function(index, value) {
+                $('#work-history-body').append('<tr><td>' + index + '</td><td>' + (Math.round(value * 100) / 100) + '</td></tr>');
+            });  
+            
+            workHistoryList.dialog('open');
+        });
     });
    
-    $('#view-history').click(function() {
-        $('#work-history').append(
-        '<br><table class="table-bordered ptable"><thead><tr><th>Monday Feb.2</th><th>Tuesday Feb.3</th><th>Wednesday Feb.4</th><th>Thursday Feb.5</th><th>Friday Feb.6</th><th>Saturday Feb.7</th><th>Sunday Feb.8</th></tr></thead><tbody><tr><td>5.2</td><td>4.3</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><br><table class="table-bordered ptable"><thead><tr><th>Monday Feb.2</th><th>Tuesday Feb.3</th><th>Wednesday Feb.4</th><th>Thursday Feb.5</th><th>Friday Feb.6</th><th>Saturday Feb.7</th><th>Sunday Feb.8</th></tr></thead><tbody><tr><td>5.2</td><td>4.3</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>'
-        );
+    workHistoryList = $('#work-history-submit-modal').dialog({
+        autoOpen: false,
+        height: 350,
+        width: 650,
+        modal: true,
+        // Close when click outside dialog
+        open: function(event,ui) {
+            $('.ui-widget-overlay').bind('click', function() {
+                $(this).siblings('.ui-dialog')
+                       .find('.ui-dialog-content')
+                       .dialog('close');
+            });
+        }
+    });
+   
+    $('#correction-form #clear').click(function() {
+       $('.submit-success').hide(); 
     });
 
     correctionForm = $('#correction-form').dialog({
@@ -86,9 +113,58 @@ $(document).ready(function() {
         }
     });
     
+    $('#work-history-btn').button().click(function() {
+        workHistoryModal.dialog('open');
+    });
+    
+    workHistoryModal = $('#work-history-modal').dialog({
+        autoOpen: false,
+        height: 300,
+        width: 450,
+        modal: true,
+        buttons: {
+            'Submit' : function() {
+                $('#work-history-modal').submit();
+            }
+        },
+        
+        // Close when click outside dialog
+        open: function(event,ui) {
+            $('.ui-widget-overlay').bind('click', function() {
+                $(this).siblings('.ui-dialog')
+                       .find('.ui-dialog-content')
+                       .dialog('close');
+            });
+        }
+    });
+    
     $('#pay-calculator-btn').button().click(function() {
         payCalculator.dialog('open');
     });
+    
+    function getWorkHistoryByDateRange(start, end) {
+        return $.ajax({
+            type: 'POST',
+            url: 'app/get_work_history.php',
+            data: {
+                'firstDay' : start,
+                'lastDay' : end
+            },
+            dataType: 'json'
+        });
+    }
+    
+    function sumWorkHoursByDateRange(start, end) {
+        return $.ajax({
+            type: 'POST',
+            url: 'app/get_sum_history.php',
+            data: {
+                'firstDay': start,
+                'lastDay' : end
+            },
+            dataType: 'json'
+        });
+    }
     
     function getClockInTime() {
         $.ajax({

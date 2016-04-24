@@ -45,21 +45,25 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
     <?php } ?>
   </div>
 </div>
-<button class="" id="correction-form-btn">Correction Form</button>
-<button class="" id="pay-calculator-btn">Pay Calculator</button>
 <div class="row">
-  <div class="col-md-12" id="work-history">
+  <div class="col-md-5">
     <h2>Work Hour(s)</h2>
+  </div>
+  <div class="col-md-6">
+    <button class="" id="correction-form-btn" style="margin-bottom:-45px">Correction Form</button>
+    <button class="" id="pay-calculator-btn" style="margin-bottom:-45px">Pay Calculator</button>
+    <button class="" id="work-history-btn" style="margin-bottom:-45px">Work History</button>
+  </div>
+  <div class="col-md-12" id="work-history">
     <table class="table-bordered ptable">
       <thead>
         <tr id="work-history-week">
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
+          <?php
+          $current_date = $start_date;
+          for($i = 0; $i < 7; $i++) {
+              echo '<th>' . $current_date . '</th>';
+              $current_date = date('Y-m-d', strtotime($current_date . '+1 day'));
+          } ?>
         </tr>
       </thead>
       <tbody>
@@ -77,15 +81,6 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
           </tr>
       </tbody>
     </table>
-  </div>
-</div>
-<div class="row">
-	<br>
-  <div class="col-md-12">
-  	<div class="col-md-6"></div>
-  	<div class="col-md-4">
-      <button type="submit" class="btn btn-default btnmid btnr" id="view-history">View History</button>
-    </div>
   </div>
 </div>
 
@@ -137,7 +132,7 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
         <p>*Start Date:</p>
       </div>
       <div class="col-md-6">
-        <input type="date" required>
+        <input type="date" id="pay-start" name="pay-start" required>
       </div>
     </div>
     <div class="col-md-12">
@@ -145,7 +140,7 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
         <p>*End Date:</p>
       </div>
       <div class="col-md-6">
-        <input type="date" required>
+        <input type="date" id="pay-end" name="pay-end" required>
       </div>
     </div>
     <div class="col-md-12">
@@ -153,11 +148,48 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
         <p>*Wage:</p>
       </div>
       <div class="col-md-6">
-        <input type="number" step="0.01" min="0" required>
+        <input type="number" step="0.01" min="0" id="pay-wage" name="pay-wage" required>
       </div>
     </div>
     <div class="col-md-12">
       <h3>Total Pay = $<span class="total-pay"></span></h3>
+    </div>
+  </div>
+</form>
+<form role="form" id="work-history-modal" title="Work History">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <p>*Start Date</p>
+      </div>
+      <div class="col-md-6">
+        <input type="date" name="history-start-date" id="history-start-date" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="col-md-5">
+        <p>*End Date</p>
+      </div>
+      <div class="col-md-6">
+        <input type="date" name="history-end-date" id="history-end-date" required>
+      </div>
+    </div>
+  </div>
+</form>
+
+<form role="form" id="work-history-submit-modal" title="Work History">
+  <div class="row">
+    <div class="col-md-12">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Work Hours</th>
+          </tr>
+        </thead>
+        <tbody id="work-history-body">
+        </tbody>
+      </table>
     </div>
   </div>
 </form>
