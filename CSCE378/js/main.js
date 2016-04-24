@@ -1,29 +1,20 @@
 $(document).ready(function() {
-    $.fn.bootstrapBtn = $.fn.button.noConflict();
+    //$.fn.bootstrapBtn = $.fn.button.noConflict();
     
     getClockInTime();
     getTime();
-   
-    var now = new Date();
-    var first = now.getDate() - now.getDay();
-    var firstDayOfWeek = new Date(now.setDate(first));
-    firstDayOfWeek.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-
-    var firstDayOfWeekIso = firstDayOfWeek.toISOString().slice(0, 10);
-    var lastDayOfWeekIso = new Date(firstDayOfWeek.setDate(firstDayOfWeek.getDate() + 6)).toISOString().slice(0, 10);
-   
+    
     $('.clock-form').submit(function(event) {
+       event.preventDefault();
        var now = new Date();
        $.ajax({
            type: 'POST',
            url: '/app/clock_events.php',
            data: { 'time': now.toISOString() }
-       })
-       .done(function(data) {
+       
+       }).done(function(data) {
           location.reload();
        });
-       
-       event.preventDefault();
     });
    
    $('#pay-calculator').submit(function(event) {
