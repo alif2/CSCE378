@@ -8,9 +8,10 @@ $s_user_clock_status = database_get_user_clock_status(session_get_user_email());
 $start_date =  date('Y-m-d', strtotime('-' . date('w') . ' days'));
 $end_date = date('Y-m-d', strtotime($start_date . '+6 days'));
 $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date, $end_date);
+$days_of_week = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
 ?>
 
-<h4>Fixed Navbar</h4>
+<h3>Fixed Navbar</h3>
 <div class="row">
   <div class="col-md-4">
     <form class="clock-form" role="form" action="/index.php" method="POST">
@@ -61,7 +62,7 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
           <?php
           $current_date = $start_date;
           for($i = 0; $i < 7; $i++) {
-              echo '<th>' . $current_date . '</th>';
+              echo '<th>' . $days_of_week[$i] . '<br>' . $current_date . '</th>';
               $current_date = date('Y-m-d', strtotime($current_date . '+1 day'));
           } ?>
         </tr>
@@ -110,16 +111,10 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
         <textarea rows="7"></textarea>
       </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12" id="submit-success-msg" hidden>
       <div class="col-md-2"></div>
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-default btnsm btnl">Submit</button>
-      </div>
-      <div class="col-md-1">
-        <button type="reset" class="btn btn-default btnsm btnl" id="clear">Clear</button>
-      </div>
-      <div class="col-md-6 submit-success" hidden>
-        <pre class="txt-active">Submitted successfully!</pre>
+      <div class="col-md-7">
+        <p>Submitted successfully</p>
       </div>
     </div>
   </div>
@@ -180,7 +175,7 @@ $work_hours = user_get_hours_by_date_range(session_get_user_email(), $start_date
 <form role="form" id="work-history-submit-modal" title="Work History">
   <div class="row">
     <div class="col-md-12">
-      <table>
+      <table class="table-bordered ptable">
         <thead>
           <tr>
             <th>Date</th>

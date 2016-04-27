@@ -28,11 +28,6 @@ $(document).ready(function() {
         });
    });
    
-    $('#correction-form').submit(function(event) {        
-        event.preventDefault();
-        $('.submit-success').show();
-    });
-   
     $('#work-history-modal').submit(function(event) {
         event.preventDefault();
         var workHistoryPromise = getWorkHistoryByDateRange($('#history-start-date').val(), $('#history-end-date').val());
@@ -67,9 +62,18 @@ $(document).ready(function() {
 
     correctionForm = $('#correction-form').dialog({
         autoOpen: false,
-        height: 350,
+        height: 400,
         width: 650,
         modal: true,
+        buttons: {
+            'Submit': function() {
+                $('#submit-success-msg').show();
+            },
+            'Clear': function() {
+                $('#submit-success-msg').hide();
+                $('#correction-form')[0].reset();
+            }
+        },
         // Close when click outside dialog
         open: function(event,ui) {
             $('.ui-widget-overlay').bind('click', function() {
