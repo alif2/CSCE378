@@ -1,0 +1,145 @@
+body {
+  background-color: #F1F1F1;
+}
+
+input, textarea {
+  color: #000000;
+}
+
+input, textarea {
+  border-color: #E0E0E0;
+}
+
+input {
+  width: 170px;
+}
+
+nav{ /* assigning the top bar to the entire navbar div element */
+  text-align: center;
+  border: 0 !important;
+  box-shadow: inset 0px 7px 0px #FFBF00; /* initial gray color to the top bar */ 
+  padding: 0;
+}
+
+.navbar-inverse .navbar-brand{  /*Nav title*/
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover { /*The active menu*/
+    color: #FFBF00;
+    background-color: #080808;
+}
+
+.navbar-inverse .navbar-nav>li>a {  /*Nav main txt*/
+    color: #FFFFFF;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #FFBF00;
+}
+
+.nav li.active a,
+.nav li.active a:hover,
+.nav li.active a:focus {
+  color: #FFFFFF;
+  box-shadow: inset 0px 6px 0px #333333; /* switch to a lighter color for active element */
+}
+
+.btn-default {
+  background-color: #333333;
+  color: #FFFFFF;
+  border-color: #333333;
+}
+
+.btn-default:focus {
+  color: #FFBF00;
+  background-color: #000000;
+  border-color: #333333;
+}
+
+.btn-default:hover {
+  color: #FFBF00;
+  background-color: #333333;
+  border-color: #3333333;
+}
+
+.btnlg {
+	font-size: 36px;
+	border-radius: 10px;
+}
+
+.ptable {
+  background-color: #FFFFFF;
+	width: 940px;
+	height: 100px;
+}
+
+.ptable th,
+.ptable td {
+  text-align: center;
+}
+
+.btnr {
+  float: right;
+}
+
+.btnl {
+  float: left;
+}
+
+.btnmid {
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 6px 18px;
+  width: 120px;
+}
+
+.btnsm {
+  font-size: 14px;
+  border-radius: 20px;
+  padding: 6px 18px;
+  width: 95px;
+}
+
+#correction-form textarea {
+  width: 100%;
+}
+
+.txt-active {
+  text-align: center;
+  font-size: 14px;
+  color: #FFA400;
+}
+
+.verticalLine {
+  border-left: thick solid #ff0000;
+}
+
+h5 {
+  margin: 0 -10px 0;
+}
+
+pre {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    display: block;
+    padding: 9.5px;
+    margin: -4px 0 0;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+}
+
+#work-history-submit-modal table {
+  width: 100%;
+}
+
+#work-history-submit-modal tr,
+#work-history-submit-modal td,
+#work-history-submit-modal th {
+  border: 1px solid black;
+}
